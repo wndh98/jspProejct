@@ -10,7 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class MybatisSqlSessionFactory {
 	private static SqlSessionFactory ssf;
-	private MybatisSqlSessionFactory() {
+	static{
 		Reader reader;
 		try {
 			reader = Resources.getResourceAsReader("configuration.xml");
@@ -20,7 +20,7 @@ public class MybatisSqlSessionFactory {
 			e.printStackTrace();
 		}
 	}
-	public SqlSession getSqlSession(boolean bool) {
+	public static SqlSession getSqlSession(boolean bool) {
 		return ssf.openSession(bool);
 	}
 	

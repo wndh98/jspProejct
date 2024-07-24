@@ -8,10 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${pgm==null||pgm.equals('') }">
-	<c:set var="pgm" value="/WEB-INF/view/main.jsp"></c:set>
-</c:if>
-<jsp:include page="${pgm }"></jsp:include>
-
+<jsp:include page="/view/main.jsp"></jsp:include>
 </body>
 </html>

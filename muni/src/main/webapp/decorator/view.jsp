@@ -2,9 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="deco"
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
+<%@taglib prefix="c"
+	uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="kr">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,9 +21,10 @@
 </head>
 
 <body>
+<div id="wrap">
 	<jsp:include page="header.jsp"></jsp:include>
 	<deco:body></deco:body>
-	<jsp:include page="footer.jsp"></jsp:include>
-
+ 	<jsp:include page="footer.jsp"></jsp:include>
+</div>
 </body>
 </html>

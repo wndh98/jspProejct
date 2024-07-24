@@ -1,0 +1,61 @@
+.normalpackage_box {
+	margin-bottom: 120px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.normalmenu {
+	border-top: 1px solid #e0e0e0;
+}
+
+@media ( min-width : 1025px) {
+	.normalmenu {
+		margin: 50px 0 0;
+		padding: 40px 0 0;
+	}
+}
+
+.normalmenu {
+	border-top: 0;
+	padding: 0 0 20px;
+	margin: 0;
+	border-bottom: 1px solid #ebebeb;
+}
+
+.normalmenu .function {
+	overflow: hidden;
+	text-align: right;
+	line-height: 38px;
+}
+
+.normalmenu .prdCount {
+	float: left;
+	color: #7d7d7d;
+}
+
+.ec-base-product ul.grid4>li {
+	width: 33.3%;
+}
+
+.scrollx {
+	padding: 0;
+	margin: 0 auto;
+}
+
+.paging .first_btn {
+	background: url(/images/btn_page_first.png) no-repeat center center;
+	background-size: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.paging .last_btn {
+	background: url(/images/btn_page_last.png) no-repeat center center;
+	background-size: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+}

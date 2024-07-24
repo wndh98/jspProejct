@@ -6,13 +6,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylehseet" href="/font/monstserrat.css">
-<link rel="stylehseet" href="/font/nanum_gothic.css">
-<link rel="stylesheet" href="/footer.css">
-<link rel="stylesheet" href="/header.css">
-<link rel="stylesheet" href="/style.css">
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
 </head>
 
 <body>

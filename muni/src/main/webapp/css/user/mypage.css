@@ -1,0 +1,118 @@
+.myshopArea {
+	width: calc(92% - 220px);
+	max-width: calc(1230px - 220px) !important;
+	padding: 0 0 0 220px !important;
+	margin: 0 auto !important;
+	min-height: 630px;
+	position: relative;
+}
+
+/* 홈/마이쇼핑 */
+.section_titleArea {
+	width: 92%;
+	margin-left: auto;
+	margin-right: auto;
+	margin: 0 auto;
+	padding: 20px 0 0 0;
+	overflow: hidden;
+	height: 30px;
+	line-height: 30px;
+	max-width: 1440px !important;
+}
+
+.section_titleArea>ol {
+	display: flex;
+	float: right;
+}
+
+.section_titleArea li:first-child {
+	background: none;
+}
+
+.section_titleArea li:not(:first-child):before {
+	content: "/";
+	display: inline-block;
+	margin: 0 4px 0 2px;
+	color: #7d7d7d;
+	vertical-align: top;
+}
+
+/* 왼쪽 메뉴 */
+.myshopArea>.myshopMain {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 200px;
+}
+
+.myshopArea>.myshopMain>h3 {
+	color: #000;
+	color: var(--font-color-heading);
+	font-size: 18px;
+	font-weight: normal;
+	font-weight: bold;
+}
+
+.myshopArea>.myshopMain>.subTitle {
+	margin: 50px 0 0;
+	padding-bottom: 6px;
+}
+
+.myshopArea>.myshopMain>div:nth-child(1) {
+	margin: 0;
+}
+
+.myshopArea>.myshopMain>.menu li {
+	margin: 10px 0 0 0;
+}
+
+.myshopArea .myshopMain .menu li a {
+	display: block;
+	color: #6d6d6d;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+/* 문의하기 */
+.myshopArea .myshopMain .consult {
+	margin: 45px 0 0;
+}
+
+.myshopArea .myshopMain .consult a {
+	font-size: 14px;
+	padding: 13px 22px;
+	height: 40px;
+	border: 1px solid #D6D6D6;
+	line-height: 1;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+/* 위시리스트 영역 */
+.myshopArea>.titleArea_mywish {
+	margin: 50px 0 20px;
+	text-align: left;
+}
+
+.myshopArea .myshop_wishlist>p.empty {
+	border-top: 2px solid #1a1a1a;
+	border-bottom: 1px solid #e6e6e6;
+	font-size: 16px;
+	color: #9a9a9a;
+	padding: 64px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.myshopArea .titleArea_mywish>h2 {
+	font-weight: 700;
+	color: var(--font-color-heading);
+	font-size: 16px;
+}
+
+.myshopArea .myshop_wishlist>p>svg {
+	margin-bottom: 16px;
+	display: block;
+}
+

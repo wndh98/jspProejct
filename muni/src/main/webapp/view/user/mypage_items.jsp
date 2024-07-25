@@ -272,7 +272,7 @@
 											<button class="btnNormal_w increase"
 												style="width: 30px; height: 30px; padding: 0;">+</button>
 											<button class="delete" style="width: 20px;">
-												<img src="../images/product/ico_product_delete.svg">
+												<img src="/images/product/ico_product_delete.svg">
 											</button>
 										</div>
 									</td>
@@ -304,8 +304,9 @@
 					<span id="btnBuy">바로구매</span>
 				</a>
 			</div>
-			<a class="btnClose close" onclick=""></a>
+			<a class="btnClose close" id="sideClose" onclick=""></a>
 		</div>
 	</div>
+	<script src="/js/mypage/mypage_items.js"></script>
 </body>
 </html>

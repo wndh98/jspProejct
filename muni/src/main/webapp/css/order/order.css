@@ -372,14 +372,6 @@ body {
     min-width: 320px;
 }
 
-@media (min-width: 1024px) {
-    #header {
-        max-width: 900px;
-        width: inherit;
-        margin: 0 auto;
-    }
-}
-
 #header .header {
     position: relative;
     padding: 18px 0;

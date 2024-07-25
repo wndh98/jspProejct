@@ -471,7 +471,7 @@
 	right: 10px;
 	width: 1px;
 	height: 21px;
-	margin: 10px 10px 0 0;
+/* 	margin: 10px 10px 0 0; */
 	background: #000;
 	-webkit-transition: .3s ease-out;
 	transition: .3s ease-out;
@@ -484,11 +484,11 @@
 	right: 0;
 	width: 21px;
 	height: 1px;
-	margin: 10px 10px 0 0;
+/* 	margin: 10px 10px 0 0; */
 	background: #000;
 	-webkit-transition: .3s ease-out;
 	transition: .3s ease-out;
-	top: 12px;
+	top: 10px;
 	width: 25px;
 }
 

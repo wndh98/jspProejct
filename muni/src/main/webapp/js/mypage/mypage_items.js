@@ -6,7 +6,7 @@ button.addEventListener("click", function() {
 	document.getElementById("dark").classList.toggle("close");
 });
 
-const button2 = document.getElementsByClassName("btnClose")[0];
+const button2 = document.getElementById("sideClose");
 
 button2.addEventListener("click", function() {
 	document.getElementById("popupbox").classList.toggle("close");

@@ -4,7 +4,7 @@
 <configuration>
 	<properties resource="db.properties" />
 	<typeAliases>
-		
+		<typeAlias alias="ProductCate" type="muni.product.dto.ProductCateDto" />
 		<!-- <typeAlias alias="member" type="ch16.model.Member" /> -->
 	</typeAliases>
 	<environments default="development">
@@ -19,7 +19,7 @@
 		</environment>
 	</environments>
 	<mappers>
-	
+		<mapper resource="muni/product/sql/product.xml"/>
 		<!-- <mapper resource="member.xml" /> -->
 	</mappers>
 </configuration>

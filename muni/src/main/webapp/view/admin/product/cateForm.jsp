@@ -23,7 +23,7 @@
 			<div class="board_container">
 				<div class="board_content">
 
-					<form>
+					<form method="post" name="frm" onsubmit="return checkCate();" action="/admin/product/pcWrite.do">
 						<div class="boardTitle">
 							<h3></h3>
 						</div>
@@ -34,11 +34,11 @@
 							</colgroup>
 							<tr>
 								<th>카테고리명</th>
-								<td><input type="text" style="width: 100%"></td>
+								<td><input type="text" style="width: 100%" name=pcName></td>
 							</tr>
 						</table>
 						<div class="btn_menu">
-							<button class="btnBold">삭제</button>
+							<button class="btnBold" type="button">삭제</button>
 							<button class="btnBold_w">작성하기</button>
 						</div>
 					</form>

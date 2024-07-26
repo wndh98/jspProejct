@@ -9,7 +9,7 @@ public class Main implements CommandProcess{
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		return "main.jsp";
+		return "/view/main/main.jsp";
 	}
 
 }

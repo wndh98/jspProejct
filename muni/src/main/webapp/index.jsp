@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="/view/main.jsp"></jsp:include>
+<script>
+	location.href="/main.do";
+</script>
 </body>
 </html>

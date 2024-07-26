@@ -50,8 +50,7 @@
 									<div class="thumbnail">
 										<!-- 상품 썸네일 -->
 										<a href="#"> <!-- 썸네일 이미지 --> <img
-											src="/images/product/product1.png" alt="dog"
-											loading="lazy">
+											src="/images/product/product1.png" alt="dog" loading="lazy">
 										</a>
 										<div class="icon__box">
 											<!-- 아이콘 박스 -->
@@ -85,7 +84,7 @@
 											</li>
 										</ul>
 										<div class="icon">
-											<img src="/images/produt/hit.gif" alt=""> <img
+											<img src="/images/product/hit.gif" alt=""> <img
 												src="/images/product/sale.gif" alt="">
 										</div>
 									</div>
@@ -97,8 +96,7 @@
 									<div class="thumbnail">
 										<!-- 상품 썸네일 -->
 										<a href="#"> <!-- 썸네일 이미지 --> <img
-											src="/images/product/product1.png" alt="dog"
-											loading="lazy">
+											src="/images/product/product1.png" alt="dog" loading="lazy">
 										</a>
 										<div class="icon__box">
 											<!-- 아이콘 박스 -->
@@ -144,8 +142,7 @@
 									<div class="thumbnail">
 										<!-- 상품 썸네일 -->
 										<a href="#"> <!-- 썸네일 이미지 --> <img
-											src="/images/product/product1.png" alt="dog"
-											loading="lazy">
+											src="/images/product/product1.png" alt="dog" loading="lazy">
 										</a>
 										<div class="icon__box">
 											<!-- 아이콘 박스 -->
@@ -191,8 +188,7 @@
 									<div class="thumbnail">
 										<!-- 상품 썸네일 -->
 										<a href="#"> <!-- 썸네일 이미지 --> <img
-											src="/images/product/product1.png" alt="dog"
-											loading="lazy">
+											src="/images/product/product1.png" alt="dog" loading="lazy">
 										</a>
 										<div class="icon__box">
 											<!-- 아이콘 박스 -->
@@ -237,8 +233,7 @@
 									<div class="thumbnail">
 										<!-- 상품 썸네일 -->
 										<a href="#"> <!-- 썸네일 이미지 --> <img
-											src="/images/product/product1.png" alt="dog"
-											loading="lazy">
+											src="/images/product/product1.png" alt="dog" loading="lazy">
 										</a>
 										<div class="icon__box">
 											<!-- 아이콘 박스 -->
@@ -283,8 +278,7 @@
 									<div class="thumbnail">
 										<!-- 상품 썸네일 -->
 										<a href="#"> <!-- 썸네일 이미지 --> <img
-											src="/images/product/product1.png" alt="dog"
-											loading="lazy">
+											src="/images/product/product1.png" alt="dog" loading="lazy">
 										</a>
 										<div class="icon__box">
 											<!-- 아이콘 박스 -->
@@ -377,7 +371,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -412,8 +406,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -424,7 +418,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -459,8 +453,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -471,7 +465,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -506,8 +500,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -518,7 +512,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -552,8 +546,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -564,7 +558,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -598,8 +592,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -610,7 +604,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -645,8 +639,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -657,7 +651,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -692,8 +686,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -704,7 +698,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -739,8 +733,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -751,7 +745,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -785,8 +779,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -797,7 +791,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -831,8 +825,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -851,7 +845,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -885,8 +879,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -897,7 +891,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -931,8 +925,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -943,7 +937,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -977,8 +971,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -989,7 +983,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -1023,8 +1017,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -1035,7 +1029,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -1069,8 +1063,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -1081,7 +1075,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -1115,8 +1109,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -1127,7 +1121,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -1161,8 +1155,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -1173,7 +1167,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -1207,8 +1201,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -1219,7 +1213,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -1253,8 +1247,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -1265,7 +1259,7 @@
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
 												<a href="#"> <!-- 썸네일 이미지 --> <img
-													src="images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
+													src="/images/product/product1.png" alt="dog"
 													loading="lazy">
 												</a>
 												<div class="icon__box">
@@ -1299,8 +1293,8 @@
 													</li>
 												</ul>
 												<div class="icon">
-													<img src="images/hit.gif" alt=""> <img
-														src="images/sale.gif" alt="">
+													<img src="/images/product/hit.gif.gif" alt=""> <img
+														src="/images/product/sale.gif" alt="">
 												</div>
 											</div>
 										</div>
@@ -1313,6 +1307,6 @@
 			</section>
 		</div>
 	</div>
-	<script src="/script/main.js"></script>
+	<script src="/js/main.js"></script>
 </body>
 </html>

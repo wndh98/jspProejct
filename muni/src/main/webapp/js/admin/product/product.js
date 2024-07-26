@@ -1,4 +1,3 @@
-
 $(function() {
 	var editor = new FroalaEditor('#froala', {
 		heightMin: 440,

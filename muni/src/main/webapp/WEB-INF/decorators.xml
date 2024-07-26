@@ -10,8 +10,14 @@
 		<pattern>/product/*</pattern>
 		<pattern>/admin/product/*</pattern>
 	</decorator>
-	
+
 	<decorator name="adminMain" page="admin_view.jsp">
 		<pattern>/view/admin/*</pattern>
 	</decorator>
+	<excludes>
+		<pattern>/view/admin/index.jsp</pattern>
+	</excludes>
+	<excludes>
+		<pattern>/view/order/orderForm.jsp</pattern>
+	</excludes>
 </decorators>

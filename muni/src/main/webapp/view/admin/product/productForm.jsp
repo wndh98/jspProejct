@@ -6,7 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/css/froala_editor.pkgd.min.css" rel="stylesheet"
+        type="text/css" />
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js"></script>
 <title>Document</title>
+<<<<<<< HEAD
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.pkgd.min.js"></script>
 <link
@@ -15,6 +20,8 @@
 <link rel="stylesheet" href="/admin/member/sidebars.css">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/admin/admin_style.css">
+=======
+>>>>>>> branch 'lee' of https://github.com/wndh98/jspProejct.git
 <style>
 table {
 	border-top: 2px solid #000;

@@ -3,8 +3,11 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<properties resource="db.properties" />
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
 	<typeAliases>
-		
+		<typeAlias alias="user" type="muni.user.dto.UserDto" />
 		<!-- <typeAlias alias="member" type="ch16.model.Member" /> -->
 	</typeAliases>
 	<environments default="development">
@@ -19,7 +22,7 @@
 		</environment>
 	</environments>
 	<mappers>
-	
+		<mapper resource="muni/user/sql/userSql.xml" />
 		<!-- <mapper resource="member.xml" /> -->
 	</mappers>
 </configuration>

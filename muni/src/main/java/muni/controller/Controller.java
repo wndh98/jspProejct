@@ -74,7 +74,6 @@ public class Controller extends HttpServlet {
 	    	  // request.getContextPath().length()+1 : 6
 		      command = command.substring(
 		    		 request.getContextPath().length()); 
-		      System.out.println(command);
 		      // command : message.do
 	          com = (CommandProcess)commandMap.get(command); 
 	          // com : service.Message객체를 CommandProcess로 형변환

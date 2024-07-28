@@ -11,7 +11,7 @@ public class UserDto {
 	private String userAddressNum;
 	private String userAddress;
 	private String userAddressEtc;
-	private String userTell;
+	private String userTel;
 	private String userPhone;
 	private String userEmail;
 	private String userSolar;
@@ -22,20 +22,18 @@ public class UserDto {
 	private String userRecommend;
 	private int userPoint;
 	private String userDel;
-	private String userSnsAgree;
-	private String userEmailAgree;
+	private int userSnsAgree;
+	private int userEmailAgree;
 	private Date userRegist;
 
-	
-	
 	public UserDto() {
 		super();
 	}
 
 	public UserDto(String userId, String userPassword, String userType, String userName, String userAddressNum,
-			String userAddress, String userAddressEtc, String userTell, String userPhone, String userEmail,
+			String userAddress, String userAddressEtc, String userTel, String userPhone, String userEmail,
 			String userSolar, Date userBirthday, String userComName, String userComNum, String userCoNum,
-			String userRecommend, int userPoint, String userSnsAgree, String userEmailAgree) {
+			String userRecommend, int userPoint, int userSnsAgree2, int userEmailAgree2) {
 		super();
 		this.userId = userId;
 		this.userPassword = userPassword;
@@ -44,7 +42,7 @@ public class UserDto {
 		this.userAddressNum = userAddressNum;
 		this.userAddress = userAddress;
 		this.userAddressEtc = userAddressEtc;
-		this.userTell = userTell;
+		this.userTel = userTel;
 		this.userPhone = userPhone;
 		this.userEmail = userEmail;
 		this.userSolar = userSolar;
@@ -54,8 +52,8 @@ public class UserDto {
 		this.userCoNum = userCoNum;
 		this.userRecommend = userRecommend;
 		this.userPoint = userPoint;
-		this.userSnsAgree = userSnsAgree;
-		this.userEmailAgree = userEmailAgree;
+		this.userSnsAgree = userSnsAgree2;
+		this.userEmailAgree = userEmailAgree2;
 	}
 
 	public int getUserNum() {
@@ -122,12 +120,12 @@ public class UserDto {
 		this.userAddressEtc = userAddressEtc;
 	}
 
-	public String getUserTell() {
-		return userTell;
+	public String getUserTel() {
+		return userTel;
 	}
 
-	public void setUserTell(String userTell) {
-		this.userTell = userTell;
+	public void setUserTell(String userTel) {
+		this.userTel = userTel;
 	}
 
 	public String getUserPhone() {
@@ -210,19 +208,19 @@ public class UserDto {
 		this.userDel = userDel;
 	}
 
-	public String getUserSnsAgree() {
+	public int getUserSnsAgree() {
 		return userSnsAgree;
 	}
 
-	public void setUserSnsAgree(String userSnsAgree) {
+	public void setUserSnsAgree(int userSnsAgree) {
 		this.userSnsAgree = userSnsAgree;
 	}
 
-	public String getUserEmailAgree() {
+	public int getUserEmailAgree() {
 		return userEmailAgree;
 	}
 
-	public void setUserEmailAgree(String userEmailAgree) {
+	public void setUserEmailAgree(int userEmailAgree) {
 		this.userEmailAgree = userEmailAgree;
 	}
 
@@ -232,6 +230,18 @@ public class UserDto {
 
 	public void setUserRegist(Date userRegist) {
 		this.userRegist = userRegist;
+	}
+
+	@Override
+	public String toString() {
+		return "UserDto [userNum=" + userNum + ", userId=" + userId + ", userPassword=" + userPassword + ", userType="
+				+ userType + ", userName=" + userName + ", userAddressNum=" + userAddressNum + ", userAddress="
+				+ userAddress + ", userAddressEtc=" + userAddressEtc + ", userTel=" + userTel + ", userPhone="
+				+ userPhone + ", userEmail=" + userEmail + ", userSolar=" + userSolar + ", userBirthday=" + userBirthday
+				+ ", userComName=" + userComName + ", userComNum=" + userComNum + ", userCoNum=" + userCoNum
+				+ ", userRecommend=" + userRecommend + ", userPoint=" + userPoint + ", userDel=" + userDel
+				+ ", userSnsAgree=" + userSnsAgree + ", userEmailAgree=" + userEmailAgree + ", userRegist=" + userRegist
+				+ "]";
 	}
 
 }

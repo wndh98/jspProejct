@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -34,12 +35,15 @@
 			<div class="top_menu">
 				<div></div>
 				<div class="navigation">
-					<a href="/user/joinAgree.do">회원가입</a> <a
-						href="https://munigrabby.com/member/login.html">로그인</a> <a
-						href="https://munigrabby.com/myshop/order/list.html">주문조회</a> <a
+					<c:if test="${userId==null}">
+						<a href="/user/joinAgree.do">회원가입</a>
+						<a href="/user/loginForm.do">로그인</a>
+					</c:if>
+					<c:if test="${userId!=null}">
+						<a href="/user/logout.do">로그아웃${sessionScpoe.userId }</a>
+					</c:if>
+					<a href="https://munigrabby.com/myshop/order/list.html">주문조회</a> <a
 						href="https://munigrabby.com/product/recent_view_product.html">최근본상품</a>
-
-
 					<div class="service_center">
 						<a class=service_center_var href="#none"
 							style="color: rgb(0, 0, 0);">고객센터 <i aria-hidden="true"
@@ -207,6 +211,5 @@
 
 
 	</header>
-	</body>
-	</html>
-	
+</body>
+</html>

@@ -17,6 +17,10 @@ public interface UserRepository {
 	int findByAllCnt();
 
 	List<UserDto> selectUserList(Pagination pagination);
+
+	int userUpdate(UserDto user);
+
+	int userDelete(String userId);
 	
 }
 

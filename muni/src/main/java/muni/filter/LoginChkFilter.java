@@ -19,7 +19,7 @@ public class LoginChkFilter implements Filter{
 		HttpSession session = ((HttpServletRequest)request).getSession();
 		String userId="";
 		if(session.getAttribute("userId")!=null)userId =(String) session.getAttribute("userId");
-		if(userId!=null) {
+		if(userId!=null && !userId.equals("")) {
 			request.setAttribute("userId", userId);
 		}
 		chain.doFilter(request, response);

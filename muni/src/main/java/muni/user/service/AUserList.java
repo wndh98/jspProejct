@@ -24,12 +24,13 @@ public class AUserList implements CommandProcess{
 		
 		int listCnt = ur.findByAllCnt();
 		
-		Pagination pagination = new Pagination(listCnt,curPage);
+		Pagination pagination = new Pagination(curPage,listCnt);
 		UserDto user = new UserDto();
 		
 		List<UserDto> userList = ur.selectUserList(pagination);
 		request.setAttribute("userList",userList);
-		
+		request.setAttribute("pagination", pagination);
+		System.out.println(pagination);
 		return "/view/admin/user/userList.jsp";
 	}
 

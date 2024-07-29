@@ -26,10 +26,9 @@ public class ALoginAction implements CommandProcess {
 		} else {
 			if (user == null)
 				result = -1; // 회원이 없을시
-			if (user.getUserPassword().equals(userPassword)) {
+			else if (user.getUserPassword().equals(userPassword)) {
 				result = 1; // 일치할시
 				HttpSession session = request.getSession();
-				
 				session.setAttribute("userId", userId);
 			}
 		}

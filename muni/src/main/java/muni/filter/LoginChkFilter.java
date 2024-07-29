@@ -9,10 +9,9 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class LoginFilter implements Filter{
+public class LoginChkFilter implements Filter{
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -22,10 +21,8 @@ public class LoginFilter implements Filter{
 		if(session.getAttribute("userId")!=null)userId =(String) session.getAttribute("userId");
 		if(userId!=null) {
 			request.setAttribute("userId", userId);
-			chain.doFilter(request, response);
-		}else {
-			((HttpServletResponse)response).sendRedirect("/user/loginForm.do");
 		}
+		chain.doFilter(request, response);
 		
 		
 	}

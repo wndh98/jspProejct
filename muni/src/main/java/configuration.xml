@@ -8,6 +8,7 @@
 	</settings>
 	<typeAliases>
 		<typeAlias alias="user" type="muni.user.dto.UserDto" />
+		<typeAlias alias="pagination" type="muni.paging.Pagination" />
 		<!-- <typeAlias alias="member" type="ch16.model.Member" /> -->
 	</typeAliases>
 	<environments default="development">

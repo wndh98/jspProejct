@@ -28,13 +28,19 @@
 		<id property="userRegist" column="USER_REGIST" />
 	</resultMap>
 	<select id="loginFindById" resultMap="userResultMap">
-		select * from muni_user where user_id = #{userId} and user_del='n'
+		select * from muni_user where user_id = #{userId} and user_del='N'
 	</select>
 	<select id="findById" resultMap="userResultMap">
 		select * from muni_user where user_id = #{userId}
 	</select>
+	<select id="findByAllCnt" resultType="int">
+		select count(*) from muni_user
+	</select>
+	<select id="selectUserList" parameterType="pagination" resultMap="userResultMap">
+		select * from muni_user order by USER_NUM asc offset #{startIndex} rows fetch next #{pageSize} rows only
+	</select>
 	<insert id="insert" parameterType="user">
 		insert into muni_user(USER_ID,USER_PASSWORD,USER_TYPE,USER_NAME,USER_ADDRESS_NUM,USER_ADDRESS,USER_ADDRESS_ETC,USER_TEL,USER_PHONE,USER_EMAIL,USER_SOLAR,USER_BIRTHDAY,USER_COM_NAME,USER_COM_NUM,USER_CO_NUM,USER_RECOMMEND,USER_POINT,USER_DEL,USER_SNS_AGREE,USER_EMAIL_AGREE,USER_REGIST) values
-		(#{userId},#{userPassword},#{userType},#{userName},#{userAddressNum},#{userAddress},#{userAddressEtc},#{userTel},#{userPhone},#{userEmail},#{userSolar},#{userBirthday},#{userComName},#{userComNum},#{userCoNum},#{userRecommend},#{userPoint},'n',#{userSnsAgree},#{userEmailAgree},sysdate)
+		(#{userId},#{userPassword},#{userType},#{userName},#{userAddressNum},#{userAddress},#{userAddressEtc},#{userTel},#{userPhone},#{userEmail},#{userSolar},#{userBirthday},#{userComName},#{userComNum},#{userCoNum},#{userRecommend},#{userPoint},'N',#{userSnsAgree},#{userEmailAgree},sysdate)
 	</insert>
 </mapper>

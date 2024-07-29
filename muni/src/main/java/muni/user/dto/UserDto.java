@@ -26,6 +26,7 @@ public class UserDto {
 	private int userEmailAgree;
 	private Date userRegist;
 
+
 	public UserDto() {
 		super();
 	}

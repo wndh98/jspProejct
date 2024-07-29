@@ -75,6 +75,7 @@ public class Controller extends HttpServlet {
 		      command = command.substring(
 		    		 request.getContextPath().length()); 
 		      // command : message.do
+		      
 	          com = (CommandProcess)commandMap.get(command); 
 	          // com : service.Message객체를 CommandProcess로 형변환
 	          // 자식 즉 Message객체의 requestPro()메소드 실행

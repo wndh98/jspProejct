@@ -13,19 +13,21 @@ public class ProductCateWrite implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		ProductCateRepo pcr = new ProductCateRepoImpl();
-		
+
 		String pcName = request.getParameter("pcName");
 		ProductCateDto pcd = new ProductCateDto();
 
-		String pcId = pcr.selctMaxId();
-		pcId = Integer.toString(Integer.parseInt(pcId) + 10);
-		pcd.setPcId(pcId);//
-		// product_cate 2자리수 인 값을 찾아서 제일 높읖값 + 10
-		
+		String pcId = pcr.selctMaxId(request.getParameter("pcId"));
+		if (pcId == null) {
+			pcId = request.getParameter("pcId") + "10";
+		} else {
+			pcId = Integer.toString(Integer.parseInt(pcId) + 10);
+		}
+		pcd.setPcId(pcId);
 		pcd.setPcName(pcName);
 		int result = pcr.insert(pcd);
 		request.setAttribute("result", result);
-		return "/view/admin/productCateWrite.do";
+		return "/view/admin/product/productCateWrite.jsp";
 	}
 
 }

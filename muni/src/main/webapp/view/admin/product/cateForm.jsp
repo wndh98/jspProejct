@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="kr">
 
@@ -7,18 +8,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-
 </head>
-
 <body>
-
 	<div class="row mb-3">
 		<div class="col-md-2 themed-grid-col"></div>
 		<div class="col-md-8 themed-grid-col">
 			<div class="board_container">
 				<div class="board_content">
-
-					<form method="post" name="frm" onsubmit="return checkCate();" action="/admin/product/pcWrite.do">
+					<form method="post" name="frm" onsubmit="return checkCate();"
+						action="/admin/product/pcWrite.do">
+						<input type="hidden" name="pcId" value="${pcId}">
 						<div class="boardTitle">
 							<h3></h3>
 						</div>
@@ -37,6 +36,7 @@
 							<button class="btnBold_w">작성하기</button>
 						</div>
 					</form>
+
 				</div>
 			</div>
 

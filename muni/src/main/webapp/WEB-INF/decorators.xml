@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <decorators defaultdir="/decorator">
-	<decorator name="main" page="view.jsp">
-		<pattern>/view/board/*</pattern>
-		<pattern>/view/order/*</pattern>
-		<pattern>/view/product/*</pattern>
-		<pattern>/view/user/*</pattern>
-		<pattern>/view/main.jsp</pattern>
-		<pattern>/main.do</pattern>
-		<pattern>/product/*</pattern>
-		<pattern>/admin/product/*</pattern>
-	</decorator>
+    <decorator name="main" page="view.jsp">
+        <pattern>/view/board/</pattern>
+        <pattern>/view/order/</pattern>
+        <pattern>/view/product/</pattern>
+        <pattern>/view/user/</pattern>
+        <pattern>/view/main/</pattern>
+        <pattern>/user/</pattern>
+        <pattern>/main.do</pattern>
+    </decorator>
 
-	<decorator name="adminMain" page="admin_view.jsp">
-		<pattern>/view/admin/*</pattern>
-	</decorator>
-	<excludes>
-		<pattern>/view/admin/index.jsp</pattern>
-	</excludes>
-	<excludes>
-		<pattern>/view/order/orderForm.jsp</pattern>
-	</excludes>
+    <decorator name="adminMain" page="admin_view.jsp">
+        <pattern>/view/admin/*</pattern>
+    </decorator>
+    <excludes>
+        <pattern>/view/admin/index.jsp</pattern>
+    </excludes>
+    <excludes>
+        <pattern>/view/order/orderForm.jsp</pattern>
+    </excludes>
 </decorators>

@@ -34,7 +34,7 @@
 			<div class="top_menu">
 				<div></div>
 				<div class="navigation">
-					<a href="https://munigrabby.com/member/agreement.html">회원가입</a> <a
+					<a href="/user/joinAgree.do">회원가입</a> <a
 						href="https://munigrabby.com/member/login.html">로그인</a> <a
 						href="https://munigrabby.com/myshop/order/list.html">주문조회</a> <a
 						href="https://munigrabby.com/product/recent_view_product.html">최근본상품</a>

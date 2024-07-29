@@ -12,7 +12,7 @@
 	<c:if test="${result > 0}">
 		<script type="text/javascript">
 			alert("게시글이 작성 되었습니다");
-			location.href = "catelist.do?pcName=${pcName}";
+			location.href = "/admin/product/pcList.do";
 		</script>
 	</c:if>
 	<c:if test="${result == 0 }">

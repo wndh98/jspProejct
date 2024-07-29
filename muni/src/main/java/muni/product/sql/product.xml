@@ -2,21 +2,33 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="products">
-<!-- 	<select id="proList" resultType="productItem">
-		select * from product where
-		discount >= 10 and p_del='n' and p_count>0 order
-		by discount desc
-	</select>
-	<select id="getTotal" parameterType="map" resultType="integer">
-		select
-		count(*) from product where p_del='n' and p_count>0 and ${condition}
-	</select> -->
-	<insert id="pcInsert"  parameterType="ProductCate">
-		insert into PRODUCT_CATE(pc_id,pc_name) values(#{pcId},#{pcName})
+	<resultMap id="productCateMap" type="ProductCate">
+		<id property="pcId" column="pc_id" />
+		<result property="pcName" column="pc_name" />
+	</resultMap>
+	<!-- <select id="proList" resultType="productItem"> select * from product 
+		where discount >= 10 and p_del='n' and p_count>0 order by discount desc </select> 
+		<select id="getTotal" parameterType="map" resultType="integer"> select count(*) 
+		from product where p_del='n' and p_count>0 and ${condition} </select> -->
+	<insert id="pcInsert" parameterType="ProductCate">
+		insert into
+		PRODUCT_CATE(pc_id,pc_name) values(#{pcId},#{pcName})
 	</insert>
-	
+
 	<delete id="pcDelete" parameterType="ProductCate">
-	delete from PRODUCT_CATE(pc_id) where(#{pcId})
+		delete from
+		PRODUCT_CATE(pc_id) where(#{pcId})
 	</delete>
-		
+
+	<select id="pcselctMaxId" parameterType="map"
+		resultType="string">
+		select max(pc_id)from product_cate where length(pc_id) = #{len}
+		and pc_id
+		LIKE CONCAT(#{pcId},'%')
+	</select>
+
+	<select id="pcselectList" resultMap="productCateMap">
+		select * from PRODUCT_CATE order by pc_id asc
+	</select>
+
 </mapper>

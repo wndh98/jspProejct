@@ -6,18 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<c:if test="${userId!=null }">
-	<script>
-		alert("잘못된 접근입니다.");
-		location.href="/";
-	</script>
-</c:if>
 </head>
 <body>
 	<c:if test="${result>0 }">
 		<script>
-			alert("회원가입이 완료되었습니다.");
-			location.href = "/user/loginForm.do";
+			alert("수정이 완료되었습니다.");
+			location.href = "/user/mypage/userUpdateForm.do";
 		</script>
 	</c:if>
 	<c:if test="${result==0 }">

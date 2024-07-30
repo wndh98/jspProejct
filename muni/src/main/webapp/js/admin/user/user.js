@@ -1,4 +1,4 @@
-
+/*
 $(function() {
 	let radio1 = $("input[name=radio1]");
 	let radio2 = $("input[name=radio2]");
@@ -26,3 +26,4 @@ $(function() {
 		}
 	});
 })
+*/

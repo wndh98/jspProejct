@@ -6,7 +6,6 @@ public class UserDto {
 	private int userNum;
 	private String userId;
 	private String userPassword;
-	private String userType;
 	private String userName;
 	private String userAddressNum;
 	private String userAddress;
@@ -16,9 +15,6 @@ public class UserDto {
 	private String userEmail;
 	private String userSolar;
 	private Date userBirthday;
-	private String userComName;
-	private String userComNum;
-	private String userCoNum;
 	private String userRecommend;
 	private int userPoint;
 	private String userDel;
@@ -31,14 +27,12 @@ public class UserDto {
 		super();
 	}
 
-	public UserDto(String userId, String userPassword, String userType, String userName, String userAddressNum,
+	public UserDto(String userId, String userPassword, String userName, String userAddressNum,
 			String userAddress, String userAddressEtc, String userTel, String userPhone, String userEmail,
-			String userSolar, Date userBirthday, String userComName, String userComNum, String userCoNum,
-			String userRecommend, int userPoint, int userSnsAgree2, int userEmailAgree2) {
+			String userSolar, Date userBirthday,String userRecommend, int userPoint, int userSnsAgree2, int userEmailAgree2) {
 		super();
 		this.userId = userId;
 		this.userPassword = userPassword;
-		this.userType = userType;
 		this.userName = userName;
 		this.userAddressNum = userAddressNum;
 		this.userAddress = userAddress;
@@ -48,9 +42,6 @@ public class UserDto {
 		this.userEmail = userEmail;
 		this.userSolar = userSolar;
 		this.userBirthday = userBirthday;
-		this.userComName = userComName;
-		this.userComNum = userComNum;
-		this.userCoNum = userCoNum;
 		this.userRecommend = userRecommend;
 		this.userPoint = userPoint;
 		this.userSnsAgree = userSnsAgree2;
@@ -81,13 +72,6 @@ public class UserDto {
 		this.userPassword = userPassword;
 	}
 
-	public String getUserType() {
-		return userType;
-	}
-
-	public void setUserType(String userType) {
-		this.userType = userType;
-	}
 
 	public String getUserName() {
 		return userName;
@@ -161,30 +145,6 @@ public class UserDto {
 		this.userBirthday = userBirthday;
 	}
 
-	public String getUserComName() {
-		return userComName;
-	}
-
-	public void setUserComName(String userComName) {
-		this.userComName = userComName;
-	}
-
-	public String getUserComNum() {
-		return userComNum;
-	}
-
-	public void setUserComNum(String userComNum) {
-		this.userComNum = userComNum;
-	}
-
-	public String getUserCoNum() {
-		return userCoNum;
-	}
-
-	public void setUserCoNum(String userCoNum) {
-		this.userCoNum = userCoNum;
-	}
-
 	public String getUserRecommend() {
 		return userRecommend;
 	}
@@ -235,14 +195,16 @@ public class UserDto {
 
 	@Override
 	public String toString() {
-		return "UserDto [userNum=" + userNum + ", userId=" + userId + ", userPassword=" + userPassword + ", userType="
-				+ userType + ", userName=" + userName + ", userAddressNum=" + userAddressNum + ", userAddress="
-				+ userAddress + ", userAddressEtc=" + userAddressEtc + ", userTel=" + userTel + ", userPhone="
-				+ userPhone + ", userEmail=" + userEmail + ", userSolar=" + userSolar + ", userBirthday=" + userBirthday
-				+ ", userComName=" + userComName + ", userComNum=" + userComNum + ", userCoNum=" + userCoNum
-				+ ", userRecommend=" + userRecommend + ", userPoint=" + userPoint + ", userDel=" + userDel
-				+ ", userSnsAgree=" + userSnsAgree + ", userEmailAgree=" + userEmailAgree + ", userRegist=" + userRegist
-				+ "]";
+		return "UserDto [userNum=" + userNum + ", userId=" + userId + ", userPassword=" + userPassword + ", userName="
+				+ userName + ", userAddressNum=" + userAddressNum + ", userAddress=" + userAddress + ", userAddressEtc="
+				+ userAddressEtc + ", userTel=" + userTel + ", userPhone=" + userPhone + ", userEmail=" + userEmail
+				+ ", userSolar=" + userSolar + ", userBirthday=" + userBirthday + ", userRecommend=" + userRecommend
+				+ ", userPoint=" + userPoint + ", userDel=" + userDel + ", userSnsAgree=" + userSnsAgree
+				+ ", userEmailAgree=" + userEmailAgree + ", userRegist=" + userRegist + "]";
 	}
+
+
+
+
 
 }

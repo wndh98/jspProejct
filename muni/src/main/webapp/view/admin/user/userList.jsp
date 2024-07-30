@@ -53,7 +53,7 @@
 									</td>
 									<td>${user.userName }</td>
 									<td>${user.userEmail }</td>
-									<td>${user.userTel }</td>
+									<td>${user.userPhone }</td>
 									<td>${user.userRegist }</td>
 								</tr>
 							</c:forEach>

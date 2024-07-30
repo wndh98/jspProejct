@@ -10,30 +10,28 @@ import muni.user.dto.UserDto;
 import muni.user.repository.UserRepository;
 import muni.user.repository.UserRepositoryImpl;
 
-public class AUserUpdate implements CommandProcess{
+public class AUserUpdate implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		int result = 0;
 		UserRepository ur = new UserRepositoryImpl();
-		
+
 		String userId = request.getParameter("userId");
 		UserDto user2 = ur.findById(userId);
 		if (user2 != null) {
-			
+
 			String userPassword = request.getParameter("userPassword");
-			if(userPassword.equals(""))userPassword=null;
-			String userType = request.getParameter("userType");
-			if (userType.equals("2"))
-				userType = request.getParameter("userType2");
+			if (userPassword.equals(""))
+				userPassword = null;
 			String userName = request.getParameter("userName");
 			String userAddressNum = request.getParameter("userAddressNum");
 			String userAddress = request.getParameter("userAddress");
 			String userAddressEtc = request.getParameter("userAddressEtc");
-			String userTel =null;
-			if(!request.getParameter("userTel2").equals("") && !request.getParameter("userTel3").equals("")) {
+			String userTel = null;
+			if (!request.getParameter("userTel2").equals("") && !request.getParameter("userTel3").equals("")) {
 				userTel = request.getParameter("userTel1") + "-" + request.getParameter("userTel2") + "-"
-					+ request.getParameter("userTel3");
+						+ request.getParameter("userTel3");
 			}
 			String userPhone = request.getParameter("userPhone1") + "-" + request.getParameter("userPhone2") + "-"
 					+ request.getParameter("userPhone3");
@@ -45,29 +43,22 @@ public class AUserUpdate implements CommandProcess{
 				userBirthday = Date.valueOf(request.getParameter("userBirthday1") + "-"
 						+ request.getParameter("userBirthday2") + "-" + request.getParameter("userBirthday3"));
 			}
-			String userComName = request.getParameter("userComName");
-			
-			String userComNum = request.getParameter("userComNum");
-			String userCoNum=null;
-			if(request.getParameter("userCoNum1")!=null && request.getParameter("userCoNum2")!=null) {
-				if(!request.getParameter("userCoNum1").equals("") && !request.getParameter("userCoNum2").equals("")) {
-					userCoNum = request.getParameter("userCoNum1") + "-" + request.getParameter("userCoNum2");
-				}
-			}
+
 			String userRecommend = request.getParameter("userRecommend");
 
-//			int userSnsAgree = Integer.parseInt(request.getParameter("userSnsAgree"));
-//			int userEmailAgree = Integer.parseInt(request.getParameter("userEmailAgree"));
-			int userSnsAgree = 0;
-			int userEmailAgree = 0;
-			int userPoint = 0;
-			if (userSnsAgree == 1) {
-				userPoint = 3000;
+			int userSnsAgree=0;
+			if(request.getParameter("userSnsAgree")!=null) {
+				userSnsAgree = Integer.parseInt(request.getParameter("userSnsAgree"));
 			}
-			UserDto user = new UserDto(userId, userPassword, userType, userName, userAddressNum, userAddress,
-					userAddressEtc, userTel, userPhone, userEmail, userSolar, userBirthday, userComName, userComNum,
-					userCoNum, userRecommend, userPoint, userSnsAgree, userEmailAgree);
-			System.out.println(user);
+			int userEmailAgree=0;
+			if(request.getParameter("userEmailAgree")!=null) {
+				userEmailAgree = Integer.parseInt(request.getParameter("userEmailAgree"));
+			}
+			int userPoint = user2.getUserPoint();
+
+			UserDto user = new UserDto(userId, userPassword, userName, userAddressNum, userAddress, userAddressEtc,
+					userTel, userPhone, userEmail, userSolar, userBirthday, userRecommend, userPoint, userSnsAgree,
+					userEmailAgree);
 			result = ur.userUpdate(user);
 		}
 		request.setAttribute("result", result);

@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="/css/user/mypage_order_check.css">
 <c:if test="${userId eq null }">
 	<script>
-		alert("잘못된 접근입니다.");
-		location.href="/";
+		alert("로그인후 이용해주세요.");
+		location.href="/user/loginForm.do";
 	</script>
 </c:if>
 </head>
@@ -129,7 +129,7 @@
                                                     <a href="/myshop/deposits/historyList.html">예치금 내역</a>
                                                 </li> -->
 						<li class=""><a href="/myshop/coupon/coupon.html">쿠폰 내역</a></li>
-						<li><a href="/myshop/addr/list.html">배송 주소록 관리</a></li>
+						<li><a href="/user/mypage/deliList.do">배송 주소록 관리</a></li>
 						<!-- <li class="">
                                 <a href="/myshop/regular_delivery.html">정기배송 관리</a>
                             </li> -->

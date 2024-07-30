@@ -7,6 +7,7 @@
 		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
 	<typeAliases>
+		<typeAlias alias="deli" type="muni.user.dto.UserDeliveryDto" />
 		<typeAlias alias="user" type="muni.user.dto.UserDto" />
 		<typeAlias alias="pagination" type="muni.paging.Pagination" />
 		<!-- <typeAlias alias="member" type="ch16.model.Member" /> -->
@@ -24,6 +25,7 @@
 	</environments>
 	<mappers>
 		<mapper resource="muni/user/sql/userSql.xml" />
+		<mapper resource="muni/user/sql/userDeli.xml" />
 		<!-- <mapper resource="member.xml" /> -->
 	</mappers>
 </configuration>

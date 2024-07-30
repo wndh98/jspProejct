@@ -5,23 +5,23 @@
 <mapper namespace="userns">
 	<resultMap id="userResultMap" type="user">
 		<id property="userNum" column="USER_NUM" />
-		<id property="userId" column="USER_ID" />
-		<id property="userPassword" column="USER_PASSWORD" />
-		<id property="userName" column="USER_NAME" />
-		<id property="userAddressNum" column="USER_ADDRESS_NUM" />
-		<id property="userAddress" column="USER_ADDRESS" />
-		<id property="userAddressEtc" column="USER_ADDRESS_ETC" />
-		<id property="userTel" column="USER_TEL" />
-		<id property="userPhone" column="USER_PHONE" />
-		<id property="userEmail" column="USER_EMAIL" />
-		<id property="userSolar" column="USER_SOLAR" />
-		<id property="userBirthday" column="USER_BIRTHDAY" />
-		<id property="userRecommend" column="USER_RECOMMEND" />
-		<id property="userPoint" column="USER_POINT" />
-		<id property="userDel" column="USER_DEL" />
-		<id property="userSnsAgree" column="USER_SNS_AGREE" />
-		<id property="userEmailAgree" column="USER_EMAIL_AGREE" />
-		<id property="userRegist" column="USER_REGIST" />
+		<result property="userId" column="USER_ID" />
+		<result property="userPassword" column="USER_PASSWORD" />
+		<result property="userName" column="USER_NAME" />
+		<result property="userAddressNum" column="USER_ADDRESS_NUM" />
+		<result property="userAddress" column="USER_ADDRESS" />
+		<result property="userAddressEtc" column="USER_ADDRESS_ETC" />
+		<result property="userTel" column="USER_TEL" />
+		<result property="userPhone" column="USER_PHONE" />
+		<result property="userEmail" column="USER_EMAIL" />
+		<result property="userSolar" column="USER_SOLAR" />
+		<result property="userBirthday" column="USER_BIRTHDAY" />
+		<result property="userRecommend" column="USER_RECOMMEND" />
+		<result property="userPoint" column="USER_POINT" />
+		<result property="userDel" column="USER_DEL" />
+		<result property="userSnsAgree" column="USER_SNS_AGREE" />
+		<result property="userEmailAgree" column="USER_EMAIL_AGREE" />
+		<result property="userRegist" column="USER_REGIST" />
 	</resultMap>
 	<select id="loginFindById" resultMap="userResultMap">
 		select * from muni_user where user_id = #{userId} and user_del='N'

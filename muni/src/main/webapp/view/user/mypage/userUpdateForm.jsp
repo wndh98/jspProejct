@@ -7,6 +7,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <link rel="stylesheet" href="/css/user/user.css">
+<c:if test="${userId eq null }">
+	<script>
+		alert("로그인후 이용해주세요.");
+		location.href="/user/loginForm.do";
+	</script>
+</c:if>
 </head>
 <body>
 	<div id="container">

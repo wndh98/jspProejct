@@ -16,14 +16,14 @@
 <body>
 	<c:if test="${result>0 }">
 		<script>
-			alert("수정이 완료되었습니다.");
-			location.href = "/user/mypage/userUpdateForm.do";
+			alert("작성완료.");
+			location.href = "/user/mypage/deliList.do";
 		</script>
 	</c:if>
 	<c:if test="${result==0 }">
 		<script>
 			alert("잘못된 접근입니다.");
-			location.href = "/main.do";
+			location.href = "/user/mypage/deliList.do";
 		</script>
 	</c:if>
 </body>

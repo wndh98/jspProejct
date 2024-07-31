@@ -51,19 +51,19 @@
 						</a>
 						<ul class="service_center_board">
 							<li class="announcement"><a
-								href="https://munigrabby.com/board/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD/1/">공지사항</a>
+								href="#">공지사항</a>
 							</li>
 							<li class="announcement"><a
-								href="https://munigrabby.com/board/%EC%83%81%ED%92%88-%EC%82%AC%EC%9A%A9%ED%9B%84%EA%B8%B0/4/">상품
+								href="/board/reviewList.do">상품
 									사용후기</a></li>
 							<li class="announcement"><a
-								href="https://munigrabby.com/board/%EC%83%81%ED%92%88-qa/6/">상품
+								href="#">상품
 									Q&A</a></li>
 							<li class="announcement"><a
-								href="https://munigrabby.com/board/%EC%9E%90%EC%9C%A0%EA%B2%8C%EC%8B%9C%ED%8C%90/5/">자유게시판</a>
+								href="#">자유게시판</a>
 							</li>
 							<li class="announcement"><a
-								href="https://munigrabby.com/board/%EA%B0%A4%EB%9F%AC%EB%A6%AC/8/">갤러리</a>
+								href="#">갤러리</a>
 							</li>
 						</ul>
 					</div>
@@ -189,7 +189,7 @@
 									href="https://munigrabby.com/board/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD/1/">공지사항</a>
 								</li>
 								<li><a
-									href="https://munigrabby.com/board/%EC%83%81%ED%92%88-%EC%82%AC%EC%9A%A9%ED%9B%84%EA%B8%B0/4/">상품
+									href="/board/reviewList.do">상품
 										사용후기</a></li>
 								<li><a
 									href="https://munigrabby.com/board/%EC%83%81%ED%92%88-qa/6/">상품

@@ -7,6 +7,9 @@
 		<pattern>/view/user/*</pattern>
 		<pattern>/view/main/*</pattern>
 		<pattern>/user/*</pattern>
+		<pattern>/board/*</pattern>
+		<pattern>/product/*</pattern>
+		<pattern>/order/*</pattern>
 		<pattern>/main.do</pattern>
 	</decorator>
 

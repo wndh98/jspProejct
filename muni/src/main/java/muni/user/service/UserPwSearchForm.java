@@ -9,6 +9,6 @@ public class UserPwSearchForm implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		return null;
+		return "/view/user/userPwSearchForm.jsp";
 	}
 }

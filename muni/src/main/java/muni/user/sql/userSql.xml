@@ -35,6 +35,9 @@
 	<select id="selectUserList" parameterType="pagination" resultMap="userResultMap">
 		select * from muni_user where USER_DEL='N' order by USER_NUM asc offset #{startIndex} rows fetch next #{pageSize} rows only
 	</select>
+	<select id="searchUserId" parameterType="user" resultMap="userResultMap">
+		select * from muni_user where USER_DEL='N' and USER_NAME=#{userName} and USER_EMAIL=#{userEmail}
+	</select>
 	<insert id="insert" parameterType="user">
 		insert into muni_user(USER_ID,USER_PASSWORD,USER_NAME,USER_ADDRESS_NUM,USER_ADDRESS,USER_ADDRESS_ETC,USER_TEL,USER_PHONE,USER_EMAIL,USER_SOLAR,USER_BIRTHDAY,USER_RECOMMEND,USER_POINT,USER_DEL,USER_SNS_AGREE,USER_EMAIL_AGREE,USER_REGIST) values
 		(#{userId},#{userPassword},#{userName},#{userAddressNum},#{userAddress},#{userAddressEtc},#{userTel},#{userPhone},#{userEmail},#{userSolar},#{userBirthday},#{userRecommend},#{userPoint},'N',#{userSnsAgree},#{userEmailAgree},sysdate)
@@ -50,5 +53,8 @@
 	</update>
 	<update id="userDelete" parameterType="string">
 		update muni_user set USER_DEL='Y' where USER_ID=#{userId}
+	</update>
+	<update id="changePw" parameterType="user">
+		update muni_user set USER_PASSWORD=#{userPassword} where USER_ID=#{userId} and USER_NAME=#{userName} and USER_EMAIL=#{userEmail}
 	</update>
 </mapper>

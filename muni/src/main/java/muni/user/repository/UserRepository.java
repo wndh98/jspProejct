@@ -21,6 +21,10 @@ public interface UserRepository {
 	int userUpdate(UserDto user);
 
 	int userDelete(String userId);
+
+	List<UserDto> searchUserId(UserDto user);
+
+	int changePw(UserDto user);
 	
 }
 

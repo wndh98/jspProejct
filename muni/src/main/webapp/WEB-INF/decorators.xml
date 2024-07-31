@@ -6,6 +6,9 @@
 		<pattern>/view/product/*</pattern>
 		<pattern>/view/user/*</pattern>
 		<pattern>/view/main.jsp</pattern>
+		<pattern>/main.do</pattern>
+		<pattern>/board/*</pattern>
+
 	</decorator>
 
 	<decorator name="adminMain" page="admin_view.jsp">

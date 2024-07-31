@@ -5,7 +5,7 @@
 	<properties resource="db.properties" />
 	<typeAliases>
 		
-		<!-- <typeAlias alias="member" type="ch16.model.Member" /> -->
+		<typeAlias alias="board" type="muni.board.dto.BoardDto" />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -18,8 +18,7 @@
 			</dataSource>
 		</environment>
 	</environments>
-	<mappers>
-	
-		<!-- <mapper resource="member.xml" /> -->
+	<mappers>	
+		<mapper resource="muni/board/sql/board.xml" />
 	</mappers>
 </configuration>

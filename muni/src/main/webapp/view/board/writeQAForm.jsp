@@ -54,8 +54,8 @@
 						<tr>
 							<th>비밀글 설정</th>
 							<td><input type="radio" name="setOpSe" id="setOpSe1"
-								checked="checked"><label for="setOpSe1">공개글</label> <input
-								type="radio" name="setOpSe" id="setOpSe2"><label
+								checked="checked"><label for="setOpSe1">공개글</label>
+								<input type="radio" name="setOpSe" id="setOpSe2"><label
 								for="setOpSe2">비밀글</label></td>
 						</tr>
 					</table>

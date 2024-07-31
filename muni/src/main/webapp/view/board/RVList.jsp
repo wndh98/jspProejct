@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="kr">
 
@@ -14,9 +15,9 @@
 	<div id="container">
 		<div class="breadcrumbs">
 			<ul>
-				<li><a href="#none">홈</a></li>
+				<li><a href="/main.do">홈</a></li>
 				<li><a href="#none">게시판</a></li>
-				<li><a href="#none">상품 사용후기</a></li>
+				<li><a href="/board/RVList.do">상품 사용후기</a></li>
 			</ul>
 		</div>
 		<div class="board_container">
@@ -33,17 +34,44 @@
 						<col style="width: 55px;">
 						<col style="width: 80px;">
 					</colgroup>
-					<thead>
+					<tr>
+						<th>번호</th>
+						<th>상품정보</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
+						<th>조회</th>
+						<th>평점</th>
+					</tr>
+					<c:if test="${empty list }">
 						<tr>
-							<th>번호</th>
-							<th>상품정보</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>작성일</th>
-							<th>조회</th>
-							<th>평점</th>
+							<th colspan="7">게시글이 없습니다</th>
 						</tr>
-					</thead>
+					</c:if>
+					<c:if test="${not empty list }">
+						<c:forEach var="RVBoard" items="${list }">
+							<tr>
+								<c:if test="${RVBoard.bScreate == '1' }">
+									<td>${RVBoard.bNum}</td>
+									<td></td>
+									<td>비밀글입니다</td>
+									<td>${RVBoard.bWriter }</td>
+									<td>${RVBoard.bDate }</td>
+									<td>${RVBoard.bCount }</td>
+									<td></td>
+								</c:if>
+								<c:if test="${RVBoard.bScreate == '0' }">
+									<td>${RVBoard.bNum}</td>
+									<td>사진</td>
+									<td><a href="/view/board/contentRV.do?bNum=${RVBoard.bNum}">${RVBoard.bSubject }</a></td>
+									<td>${RVBoard.bWriter }</td>
+									<td>${RVBoard.bDate }</td>
+									<td>${RVBoard.bCount }</td>
+									<td>${RVBoard.bStar }</td>
+								</c:if>
+							</tr>
+						</c:forEach>
+					</c:if>
 					<tr>
 						<td>19</td>
 						<td><img src="/images/6de767f8667c32d13761c505f8681e65.jpg"
@@ -52,8 +80,7 @@
 							<p class="prd_title">shiba</p> <a href="#none">정말 귀여워요~~~</a>
 						</td>
 						<td class="b_writer">박****</td>
-						<td class="b_date">2024-07-15<br>12:01:24
-						</td>
+						<td class="b_date">2024-07-15</td>
 						<td class="b_view">9</td>
 						<td class="b_rating"><img
 							src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating5.svg"
@@ -67,8 +94,7 @@
 							<p class="prd_title">shiba</p> <a href="#none">맞을래요?</a>
 						</td>
 						<td class="b_writer">오****</td>
-						<td class="b_date">2024-07-09<br>18:18:18
-						</td>
+						<td class="b_date">2024-07-09</td>
 						<td class="b_view">18</td>
 						<td class="b_rating"><img
 							src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating5.svg"
@@ -82,8 +108,7 @@
 							<p class="prd_title">shiba</p> <a href="#none">상품 오자마자 쓰는 후기</a>
 						</td>
 						<td class="b_writer">민****</td>
-						<td class="b_date">2024-07-06<br>09:18:11
-						</td>
+						<td class="b_date">2024-07-06</td>
 						<td class="b_view">21</td>
 						<td class="b_rating"><img
 							src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating5.svg"
@@ -110,7 +135,7 @@
 						</form>
 					</div>
 					<div class="board_crud">
-						<a class="btnNormal">글쓰기</a>
+						<a href="/view/board/writeRVForm.do" class="btnNormal">글쓰기</a>
 					</div>
 				</div>
 				<div class="paging">
@@ -120,6 +145,7 @@
 						<li><a href="#none">2</a></li>
 						<li><a href="#none">3</a></li>
 						<li><a href="#none">4</a></li>
+						<li><a href="#none">5</a></li>
 					</ul>
 					<a class="next_btn"></a>
 				</div>

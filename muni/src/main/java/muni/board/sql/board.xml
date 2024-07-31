@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardns">
+	<resultMap type="board" id="boardResultMap">
+		<id property="bNum" column="B_NUM" />
+		<id property="piNum" column="PI_NUM" />
+		<id property="userId" column="USER_ID" />
+		<id property="bSubject" column="B_SUBJECT" />
+		<id property="bContent" column="B_CONTENT" />
+		<id property="bStar" column="B_STAR" />
+		<id property="bWriter" column="B_WRITER" />
+		<id property="bYoutube" column="B_YOUTUBE" />
+		<id property="bCount" column="B_COUNT" />
+		<id property="bDate" column="B_DATE" />
+		<id property="bScreate" column="B_SCREATE" />
+	</resultMap>
+
+	<select id="RVSelectList" resultMap="boardResultMap">
+		select * from BOARD_REVIEW
+		order by B_DATE desc
+	</select>
+	<insert id="insert" parameterType="board">
+		insert into BOARD_REVIEW(
+		PI_NUM,
+		USER_ID,
+		B_SUBJECT,
+		B_CONTENT,
+		B_STAR,
+		B_WRITER,
+		B_YOUTUBE,
+		B_COUNT,
+		B_DATE,
+		B_SCREATE
+		)
+		values(
+		null,
+		'test1',
+		#{bSubject},
+		#{bContent},
+		#{bStar},
+		'admin',
+		'youtube',
+		#{bCount},
+		sysdate,
+		#{bScreate}
+		)
+	</insert>
+	<select id="select" parameterType="board">
+		select * from BOARD_REVIEW
+		where B_NUM=#{bNum}
+	</select>
+	<update id="update" parameterType="board">
+		update BOARD_REVIEW set
+		B_SUBJECT=#{bSubject}, B_CONTENT=#{bContent}, B_STAR=#{bStar},
+		B_SCREATE=#{bScreate} where B_NUM=#{bNum}
+	</update>
+</mapper>

@@ -36,7 +36,7 @@
 				</div>
 			</form>
 			<div class="member_search">
-				<a href="#none">아이디 찾기</a> <a href="#none">비밀번호 찾기</a>
+				<a href="/user/userIdSearchForm.do">아이디 찾기</a> <a href="/user/userPwSearchForm.do">비밀번호 찾기</a>
 			</div>
 			<div class="member_join">
 				<strong>아직 회원이 아니신가요?</strong>

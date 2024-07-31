@@ -9,7 +9,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <link rel="stylesheet" href="/css/user/user.css">
-
+<c:if test="${userId!=null }">
+	<script>
+		alert("잘못된 접근입니다.");
+		location.href="/";
+	</script>
+</c:if>
 </head>
 
 <body>

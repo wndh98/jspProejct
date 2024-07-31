@@ -19,10 +19,14 @@
 </head>
 
 <body>
+	
 	<div id="wrap">
+		
 		<jsp:include page="/decorator/header.jsp"></jsp:include>
 		<deco:body></deco:body>
 		<jsp:include page="/decorator/footer.jsp"></jsp:include>
+		
 	</div>
+	
 </body>
 </html>

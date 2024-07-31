@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -34,12 +35,15 @@
 			<div class="top_menu">
 				<div></div>
 				<div class="navigation">
-					<a href="https://munigrabby.com/member/agreement.html">회원가입</a> <a
-						href="https://munigrabby.com/member/login.html">로그인</a> <a
-						href="https://munigrabby.com/myshop/order/list.html">주문조회</a> <a
+					<c:if test="${userId==null}">
+						<a href="/user/joinAgree.do">회원가입</a>
+						<a href="/user/loginForm.do">로그인</a>
+					</c:if>
+					<c:if test="${userId!=null}">
+						<a href="/user/logout.do">로그아웃${sessionScpoe.userId }</a>
+					</c:if>
+					<a href="https://munigrabby.com/myshop/order/list.html">주문조회</a> <a
 						href="https://munigrabby.com/product/recent_view_product.html">최근본상품</a>
-
-
 					<div class="service_center">
 						<a class=service_center_var href="#none"
 							style="color: rgb(0, 0, 0);">고객센터 <i aria-hidden="true"
@@ -86,7 +90,7 @@
 								stroke-linejoin="round" stroke-width="1.5" d="M22 22l-5-5"></path>
 
                             </svg>
-					</a> <a href="https://munigrabby.com/myshop/index.html"> <svg
+					</a> <a href="/user/mypage/orderList.do"> <svg
 							xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 							fill="none" viewBox="0 0 24 24" class="icon" role="img">
                                 <circle cx="11.5" cy="6.5" r="3.75"
@@ -207,6 +211,5 @@
 
 
 	</header>
-	</body>
-	</html>
-	
+</body>
+</html>

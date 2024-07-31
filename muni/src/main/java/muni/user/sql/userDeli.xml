@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userDelins">
+	<resultMap id="deliResultMap" type="deli">
+		<id property="udNum" column="UD_NUM" />
+		<result property="userId" column="USER_ID"/>
+		<result property="udSubject" column="UD_SUBJECT"/>
+		<result property="udName" column="UD_NAME"/>
+		<result property="udAddressNum" column="UD_ADDRESS_NUM"/>
+		<result property="udAddress" column="UD_ADDRESS"/>
+		<result property="udAddressEtc" column="UD_ADDRESS_ETC"/>
+		<result property="udTel" column="UD_TEL"/>
+		<result property="udPhone" column="UD_PHONE"/>
+	</resultMap>
+	<select id="selectList" resultMap="deliResultMap">
+		select * from USER_DELIVERY where user_id = #{userId}
+	</select>
+	<select id="findById" resultMap="deliResultMap">
+		select * from USER_DELIVERY where UD_NUM = #{udNum}
+	</select>
+	<insert id="insert" parameterType="deli">
+		insert into USER_DELIVERY(USER_ID,UD_SUBJECT,UD_NAME,UD_ADDRESS_NUM,UD_ADDRESS,UD_ADDRESS_ETC,UD_TEL,UD_PHONE)
+		VALUES(#{userId},#{udSubject},#{udName},#{udAddressNum},#{udAddress},#{udAddressEtc},#{udTel},#{udPhone})
+	</insert>
+	<insert id="update" parameterType="deli">
+		update USER_DELIVERY set UD_SUBJECT=#{udSubject},UD_NAME=#{udName},UD_ADDRESS_NUM=#{udAddressNum},UD_ADDRESS=#{udAddress},UD_ADDRESS_ETC=#{udAddressEtc},
+		UD_TEL=#{udTel},UD_PHONE=#{udPhone} where UD_NUM=#{udNum}
+	</insert>
+</mapper>

@@ -17,10 +17,10 @@
         <div id="container">
             <div class="small_container">
                 <h1 class="title1">로그인</h1>
-                <form>
+                <form action="/admin/loginAction.do" method="post">
                     <div class="login_form">
-                        <input type="text" placeholder="아이디" required>
-                        <input type="password" placeholder="비밀번호" required>
+                        <input type="text" placeholder="아이디" required name="userId">
+                        <input type="password" placeholder="비밀번호" required name="userPassword">
                         <input type="submit" class="btnBold" value="로그인">
                     </div>
                 </form>

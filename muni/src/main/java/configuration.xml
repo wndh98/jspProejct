@@ -3,8 +3,13 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<properties resource="db.properties" />
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
 	<typeAliases>
+		<typeAlias alias="user" type="muni.user.dto.UserDto" />
 		<typeAlias alias="ProductCate" type="muni.product.dto.ProductCateDto" />
+		<typeAlias alias="ProductItem" type="muni.product.dto.ProductItemDto" />
 		<!-- <typeAlias alias="member" type="ch16.model.Member" /> -->
 	</typeAliases>
 	<environments default="development">
@@ -19,6 +24,7 @@
 		</environment>
 	</environments>
 	<mappers>
+		<mapper resource="muni/user/sql/userSql.xml" />
 		<mapper resource="muni/product/sql/product.xml"/>
 		<!-- <mapper resource="member.xml" /> -->
 	</mappers>

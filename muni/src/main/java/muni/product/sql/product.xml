@@ -6,6 +6,27 @@
 		<id property="pcId" column="pc_id" />
 		<result property="pcName" column="pc_name" />
 	</resultMap>
+	<resultMap id="productItemMap" type="ProductItem">
+		<id property="piNum" column="PI_NUM" />
+		<result property="piName" column="PI_NAME" />
+		<result property="piCprice" column="PI_CPRICE" />
+		<result property="piPrice" column="PI_PRICE" />
+		<result property="piSailPrice" column="PI_SAIL_PRICE" />
+		<result property="piDelivery" column="PI_DELIVERY" />
+		<result property="piPoint" column="PI_POINT" />
+		<result property="piCount" column="PI_COUNT" />
+		<result property="piContent" column="PI_CONTENT" />
+		<result property="piHit" column="PI_HIT" />
+		<result property="piFile1" column="PI_FILE1" />
+		<result property="piFile2" column="PI_FILE2" />
+		<result property="piFile3" column="PI_FILE3" />
+		<result property="piFile4" column="PI_FILE4" />
+		<result property="piFile5" column="PI_FILE5" />
+		<result property="piFile6" column="PI_FILE6" />
+		<result property="piFile7" column="PI_FILE7" />
+		<result property="piDate" column="PI_DATE" />
+	</resultMap>
+
 	<!-- <select id="proList" resultType="productItem"> select * from product 
 		where discount >= 10 and p_del='n' and p_count>0 order by discount desc </select> 
 		<select id="getTotal" parameterType="map" resultType="integer"> select count(*) 
@@ -15,20 +36,52 @@
 		PRODUCT_CATE(pc_id,pc_name) values(#{pcId},#{pcName})
 	</insert>
 
-	<delete id="pcDelete" parameterType="ProductCate">
-		delete from
-		PRODUCT_CATE(pc_id) where(#{pcId})
+	<delete id="pcDelete" parameterType="string">
+		DELETE FROM PRODUCT_CATE
+		WHERE pc_id = #{pcId}
 	</delete>
 
 	<select id="pcselctMaxId" parameterType="map"
 		resultType="string">
-		select max(pc_id)from product_cate where length(pc_id) = #{len}
+		select max(pc_id) from product_cate where length(pc_id) =
+		#{len}
 		and pc_id
 		LIKE CONCAT(#{pcId},'%')
 	</select>
 
 	<select id="pcselectList" resultMap="productCateMap">
-		select * from PRODUCT_CATE order by pc_id asc
+		select * from PRODUCT_CATE
+		order by pc_id asc
 	</select>
+	<select id="pcselect" resultMap="productCateMap"
+		parameterType="string">
+		select * from PRODUCT_CATE where pc_id=#{pcId}
+	</select>
+
+
+	<select id="findCateCount" resultType="int"
+		parameterType="string">
+		select count(*) from PRODUCT_ITEM where pc_id=#{pcId}
+	</select>
+
+	<update id="pcUpdate" parameterType="ProductCate">
+		update PRODUCT_CATE set
+		PC_NAME = #{pcName} where pc_id = #{pcId}
+	</update>
+
+
+	<insert id="piInsert" parameterType="ProductItem">
+		insert into
+		PRODUCT_ITEM(PC_ID,PI_HIT,PI_NAME,PI_CPRICE,PI_PRICE,PI_SAIL_PRICE,PI_DELIVERY,PI_COUNT,PI_POINT,PI_CONTENT,
+		PI_FILE1,PI_FILE2,PI_FILE3,PI_FILE4,PI_FILE5,PI_FILE6,PI_FILE7,PI_DATE)
+		values(#{pcId},#{piHit},#{piName},#{piCprice},#{piPrice},#{piSailPrice},
+		#{piDelivery},#{piCount},#{piPoint},#{piContent},#{piFile1},#{piFile2},
+		#{piFile3},#{piFile4},#{piFile5},#{piFile6},#{piFile7},sysdate)
+	</insert>
+
+	<select id="piselectList" resultMap="productItemMap">
+		select pi_Name, pi_Price,pi_Count, pi_Delivery from PRODUCT_ITEM
+	</select>
+
 
 </mapper>

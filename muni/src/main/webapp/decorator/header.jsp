@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -34,12 +35,15 @@
 			<div class="top_menu">
 				<div></div>
 				<div class="navigation">
-					<a href="/user/joinAgree.do">회원가입</a> <a
-						href="https://munigrabby.com/member/login.html">로그인</a> <a
-						href="https://munigrabby.com/myshop/order/list.html">주문조회</a> <a
+					<c:if test="${userId==null}">
+						<a href="/user/joinAgree.do">회원가입</a>
+						<a href="/user/loginForm.do">로그인</a>
+					</c:if>
+					<c:if test="${userId!=null}">
+						<a href="/user/logout.do">로그아웃${sessionScpoe.userId }</a>
+					</c:if>
+					<a href="https://munigrabby.com/myshop/order/list.html">주문조회</a> <a
 						href="https://munigrabby.com/product/recent_view_product.html">최근본상품</a>
-
-
 					<div class="service_center">
 						<a class=service_center_var href="#none"
 							style="color: rgb(0, 0, 0);">고객센터 <i aria-hidden="true"
@@ -124,7 +128,31 @@
 							<div class="menuBox_top">
 								<div class="top_category">
 									<ul>
-										<li class="ctg"><a
+										<c:forEach items="${cateList }" var="category">
+											<c:if test="${category.pcId.length()==2}">
+												<li class="ctg"><a
+													href="/product/piList.do?pcId=${category.pcId}">${category.pcName}</a>
+													<ul class="sub_cate01">
+														<c:forEach items="${cateList }" var="category2">
+															<c:if
+																test="${category2.pcId.length()==4 && category2.pcId.startsWith(category.pcId)}">
+																<li class="top"><a
+																	href="/product/piList.do?pcId=${category2.pcId}">${category2.pcName }</a>
+																	<ul class="sub_cate02">
+																		<c:forEach items="${cateList }" var="category3">
+																			<c:if
+																				test="${category3.pcId.length()==6 && category3.pcId.startsWith(category2.pcId)}">
+																				<li class="noChild"><a
+																					href="/product/piList.do?pcId=${category3.pcId}">${category3.pcName }</a></li>
+																			</c:if>
+																		</c:forEach>
+																	</ul></li>
+															</c:if>
+														</c:forEach>
+													</ul></li>
+											</c:if>
+										</c:forEach>
+										<!-- 										<li class="ctg"><a
 											href="https://munigrabby.com/category/Woman/23/">Woman</a>
 											<ul class="sub_cate01">
 
@@ -167,7 +195,7 @@
 
 										<li class=""><a href="/category/Accessories/28/">Accessories</a></li>
 
-										</li>
+										</li> -->
 
 									</ul>
 								</div>
@@ -207,6 +235,5 @@
 
 
 	</header>
-	</body>
-	</html>
-	
+</body>
+</html>

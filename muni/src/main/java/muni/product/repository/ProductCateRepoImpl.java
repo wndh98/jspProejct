@@ -47,4 +47,20 @@ public class ProductCateRepoImpl implements ProductCateRepo {
 		return result;
 	}
 
+	@Override
+	public int update(ProductCateDto productCate) {
+		SqlSession ss = MybatisSqlSessionFactory.getSqlSession(true);
+		int result = ss.update("products.pcUpdate", productCate);
+		ss.close();
+		return result;
+	}
+
+	@Override
+	public ProductCateDto findById(String pcId) {
+		SqlSession ss = MybatisSqlSessionFactory.getSqlSession(true);
+		ProductCateDto productCate = ss.selectOne("products.pcselect", pcId);
+		ss.close();
+		return productCate;
+	}
+
 }

@@ -1,6 +1,6 @@
 package muni.product.dto;
 
-public class ProductCateDto {
+public class ProductCateDto implements Comparable<ProductCateDto>{
 	private String pcId;
 	private String pcName;
 
@@ -28,6 +28,22 @@ public class ProductCateDto {
 
 	public ProductCateDto() {
 		super();
+	}
+
+	@Override
+	public String toString() {
+		return "ProductCateDto [pcId=" + pcId + ", pcName=" + pcName + "]";
+	}
+
+	@Override
+	public int compareTo(ProductCateDto productCate) {
+		if(productCate.pcId.compareTo(pcId)<0) {
+			return 1;
+		}else if(productCate.pcId.compareTo(pcId)>0) {
+			return -1;
+		}else {
+			return 0;
+		}
 	}
 
 }

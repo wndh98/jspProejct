@@ -245,4 +245,14 @@ public class ProductItemDto {
 		this.piDate = piDate;
 	}
 
+	@Override
+	public String toString() {
+		return "ProductItemDto [piNum=" + piNum + ", pcId=" + pcId + ", piName=" + piName + ", piCprice=" + piCprice
+				+ ", piPrice=" + piPrice + ", piSail=" + piSail + ", piSailPrice=" + piSailPrice + ", piDelivery="
+				+ piDelivery + ", piPoint=" + piPoint + ", piCount=" + piCount + ", piContent=" + piContent
+				+ ", piStatus=" + piStatus + ", piHit=" + piHit + ", piColor=" + piColor + ", piSize=" + piSize
+				+ ", piFile1=" + piFile1 + ", piFile2=" + piFile2 + ", piFile3=" + piFile3 + ", piFile4=" + piFile4
+				+ ", piFile5=" + piFile5 + ", piFile6=" + piFile6 + ", piFile7=" + piFile7 + ", piDate=" + piDate + "]";
+	}
+
 }

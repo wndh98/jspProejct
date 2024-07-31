@@ -14,4 +14,6 @@ public interface ProductCateRepo {
 	
 	List<ProductCateDto> selectList();
 
+	int update(ProductCateDto productCate);
+	ProductCateDto findById(String pcId);
 }

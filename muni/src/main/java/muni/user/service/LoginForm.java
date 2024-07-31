@@ -1,16 +1,16 @@
-package muni.board;
+package muni.user.service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import muni.controller.CommandProcess;
 
-public class ListAction implements CommandProcess{
+public class LoginForm implements CommandProcess{
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		
-		return "/view/board/list.jsp";
+		// TODO Auto-generated method stub
+		return "/view/user/loginForm.jsp";
 	}
 
 }

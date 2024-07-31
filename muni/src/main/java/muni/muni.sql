@@ -14,6 +14,7 @@ DROP TABLE "MUNI_USER"; -- 회원정보 삭제
 
 
 DROP TABLE "ORDER_CART"; -- 장바구니 삭제
+
 DROP TABLE "PRODUCT_OPTION"; -- 상품옵션 삭제
 DROP TABLE "PRODUCT_ITEM"; -- 상품 아이템 삭제
 DROP TABLE "PRODUCT_CATE"; -- 상품 카테고리 삭제

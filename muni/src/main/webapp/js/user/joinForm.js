@@ -10,7 +10,6 @@ $(function(){
 	$("#name2").prop("disabled","disabled");
 	$("#userCoNum1").prop("disabled","disabled");
 	$("#userCoNum2").prop("disabled","disabled");
-	$("#userCoNum3").prop("disabled","disabled");
     radio1.on("change",function(){
         if($(this).val()==1){
             $(".type1").css("display","table-row");
@@ -22,7 +21,6 @@ $(function(){
 			$("#name2").prop("disabled","disabled");
 			$("#userCoNum1").prop("disabled","disabled");
 			$("#userCoNum2").prop("disabled","disabled");
-			$("#userCoNum3").prop("disabled","disabled");
         }else{
             $(".type1").css("display","table-row");
             $(".type3").css("display","none");
@@ -70,6 +68,21 @@ function chkFrm(){
 		alert("비밀번호 확인과 비밀번호가 다릅니다. 다시 확인해주세요.");
 		focus.passwordChk.focus
 		return false;
-	}
+	}	
+}
+
+function coNumChk(){
+	let userCoNum=($("input[name=userCoNum1]").val()+"-"+$("input[name=userCoNum2]").val()).trim();
+	$.ajax({
+		type:"POST",
+		url : "/user/coNumChk.do",
+		data : {'userCoNum' : userCoNum},
+		success : function(data){
+			console.log(data);
+			
+			//$("input[name=coNumChk]").val("1")	
+		}
+	})
+	
 	
 }

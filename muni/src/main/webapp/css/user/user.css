@@ -205,6 +205,10 @@
   font-size: 18px;
   font-weight: 700;
   color: #1a1a1a;
+<<<<<<< HEAD
+=======
+  text-align: center;
+>>>>>>> branch 'main' of https://github.com/wndh98/jspProejct.git
 }
 #container .small_container .member_join p {
   text-align: center;

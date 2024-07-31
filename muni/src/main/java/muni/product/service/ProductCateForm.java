@@ -12,5 +12,6 @@ public class ProductCateForm implements CommandProcess {
 		request.setAttribute("pcId", request.getParameter("pcId"));
 		return "/view/admin/product/cateForm.jsp";
 	}
-
+	
+	/* return "/view/admin/product/cateForm.jsp"; */
 }

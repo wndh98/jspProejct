@@ -49,4 +49,20 @@ public class BoardRVRepoImpl implements BoardRVRepo {
 		return result;
 	}
 
+	@Override
+	public int delete(int bNum) {
+		SqlSession ss = MybatisSqlSessionFactory.getSqlSession(true);
+		int result = ss.delete("reviewns.delete",bNum);
+		ss.close();
+		return result;
+	}
+
+	@Override
+	public void updateCount(int bNum) {
+		SqlSession ss = MybatisSqlSessionFactory.getSqlSession(true);
+		ss.update("reviewns.updateCount",bNum);
+		ss.close();
+		
+	}
+
 }

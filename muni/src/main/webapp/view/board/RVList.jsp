@@ -85,9 +85,11 @@
 							<input type="submit" class="btnNormal">
 						</form>
 					</div>
+					<c:if test="${userId ne null}">
 					<div class="board_crud">
 						<a href="/board/reviewWriteForm.do?curPage=${curPage }" class="btnNormal">글쓰기</a>
 					</div>
+					</c:if>
 				</div>
 				<div class="paging">
 					<c:if test="${pagination.curPage ne 1 }">

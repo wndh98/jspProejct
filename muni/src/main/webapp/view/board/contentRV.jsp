@@ -9,12 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document1</title>
 <link rel="stylesheet" href="/css/board/board.css">
-<c:if test="${userId eq null }">
-	<script>
-		alert("잘못된 접근입니다.");
-		location.href = "/";
-	</script>
-</c:if>
 </head>
 
 <body>
@@ -61,8 +55,10 @@
 				</div>
 				<div class="board_crud">
 					<a href="/board/reviewList.do?curPage=${curPage}" class="b_btn_white">목록</a>
-					<a href="/board/reviewUpdateForm.do?curPage=${curPage}" class="b_btn_white">수정</a>
-					<a href="/board/reviewDelete.do?curPage=${curPage}" class="b_btn_white">삭제</a>
+					<c:if test='${userId eq "admin" || board.userId eq userId }'>
+						<a href="/board/reviewUpdateForm.do?curPage=${curPage}&bNum=${board.bNum}" class="b_btn_white">수정</a>
+						<a href="/board/reviewDelete.do?curPage=${curPage}&bNum=${board.bNum}" class="b_btn_white">삭제</a>
+					</c:if>
 				</div>
 
 				<div class="prev_next_page">

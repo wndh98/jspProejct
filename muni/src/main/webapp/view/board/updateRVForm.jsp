@@ -34,6 +34,7 @@
 			<h1 class="title1">상품 사용후기</h1>
 			<div class="board_content">
 				<form action="/board/reviewUpdate.do" method="post">
+					<input type="hidden" name="bNum" value="${board.bNum}">
 					<table class="boardForm">
 						<colgroup>
 							<col style="width: 190px;">

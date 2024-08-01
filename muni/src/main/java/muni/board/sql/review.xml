@@ -56,4 +56,10 @@
 		update BOARD_REVIEW set
 		B_SUBJECT=#{bSubject}, B_CONTENT=#{bContent}, B_STAR=#{bStar} where B_NUM=#{bNum}
 	</update>
+	<update id="updateCount" parameterType="int">
+		update BOARD_REVIEW set B_COUNT = B_COUNT+1 where B_NUM=#{bNum}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete from BOARD_REVIEW where B_Num=#{bNum}
+	</delete>
 </mapper>

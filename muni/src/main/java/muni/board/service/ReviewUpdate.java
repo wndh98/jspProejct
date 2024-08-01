@@ -21,9 +21,10 @@ public class ReviewUpdate implements CommandProcess {
 		String bSubject = request.getParameter("bSubject");
 		String bContent = request.getParameter("bContent");
 		int bStar = Integer.parseInt(request.getParameter("bStar"));
-		int bScreate = Integer.parseInt(request.getParameter("bScreate"));
+		int bNum = Integer.parseInt(request.getParameter("bNum"));
 
 		BoardDto board = new BoardDto();
+		board.setbNum(bNum);
 		board.setbSubject(bSubject);
 		board.setbContent(bContent);
 		board.setbStar(bStar);

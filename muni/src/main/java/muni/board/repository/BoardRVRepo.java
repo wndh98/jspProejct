@@ -16,4 +16,8 @@ public interface BoardRVRepo {
 
 	int findByAllCnt();
 
+	int delete(int bNum);
+
+	void updateCount(int bNum);
+
 }

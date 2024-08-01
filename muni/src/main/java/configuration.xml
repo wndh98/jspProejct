@@ -24,7 +24,6 @@
 			</dataSource>
 		</environment>
 	</environments>
-	<mappers>	
 	<mappers>
     <mapper resource="muni/board/sql/board.xml" />
 		<mapper resource="muni/user/sql/userSql.xml" />

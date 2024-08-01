@@ -55,7 +55,7 @@ CREATE TABLE MUNI_USER(
     CONSTRAINT UQ_USER_ID UNIQUE(USER_ID)
 );
 insert into MUNI_USER(USER_ID,USER_PASSWORD,USER_TYPE,USER_NAME,USER_PHONE,USER_EMAIL,USER_REGIST)
-value ('admin','1234','1','관리자','010-1234-5678','admin@admin.com',sysdate);
+values ('admin','1234','1','관리자','010-1234-5678','admin@admin.com',sysdate);
 
 -- 회원 배송지
 CREATE TABLE USER_DELIVERY(

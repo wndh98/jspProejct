@@ -25,7 +25,7 @@
 		</environment>
 	</environments>
 	<mappers>
-    <mapper resource="muni/board/sql/board.xml" />
+    <mapper resource="muni/board/sql/review.xml" />
 		<mapper resource="muni/user/sql/userSql.xml" />
 		<mapper resource="muni/user/sql/userDeli.xml" />
 		<!-- <mapper resource="member.xml" /> -->

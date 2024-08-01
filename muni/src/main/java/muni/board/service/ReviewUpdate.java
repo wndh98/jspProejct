@@ -8,27 +8,31 @@ import muni.board.repository.BoardRVRepo;
 import muni.board.repository.BoardRVRepoImpl;
 import muni.controller.CommandProcess;
 
-public class WriteRVAction implements CommandProcess {
+public class ReviewUpdate implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		// 화면에서 데이터 받기
+		int curPage=1;
+		String pcurPage=request.getParameter("curPage");
+		if(pcurPage!=null && !pcurPage.equals("")) {
+			curPage = Integer.parseInt(pcurPage);
+		}
+		request.setAttribute("curPage", curPage);
 		String bSubject = request.getParameter("bSubject");
 		String bContent = request.getParameter("bContent");
 		int bStar = Integer.parseInt(request.getParameter("bStar"));
 		int bScreate = Integer.parseInt(request.getParameter("bScreate"));
-		// DTO에 데이터 채우기
+
 		BoardDto board = new BoardDto();
 		board.setbSubject(bSubject);
 		board.setbContent(bContent);
 		board.setbStar(bStar);
-		board.setbScreate(bScreate);
-		// Dao에 데이터 입력 요청
+
 		BoardRVRepo brvr = new BoardRVRepoImpl();
-		int result = brvr.insert(board);
-		// 결과를 jsp에 전달하기
+		int result = brvr.update(board);
 		request.setAttribute("result", result);
-		return "/view/board/writeRV.jsp";
+		
+		return "/view/board/updateRV.jsp";
 	}
 
 }

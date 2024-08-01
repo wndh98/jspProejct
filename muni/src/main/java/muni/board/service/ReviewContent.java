@@ -8,18 +8,25 @@ import muni.board.repository.BoardRVRepo;
 import muni.board.repository.BoardRVRepoImpl;
 import muni.controller.CommandProcess;
 
-public class ContentAction implements CommandProcess {
+public class ReviewContent implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		// 화면에서 데이터 받기
+		int curPage=1;
+		String pcurPage=request.getParameter("curPage");
+		if(pcurPage!=null && !pcurPage.equals("")) {
+			curPage = Integer.parseInt(pcurPage);
+		}
+		request.setAttribute("curPage", curPage);
 		int bNum = Integer.parseInt(request.getParameter("bNum"));
-		String bSubject = request.getParameter("bSubject");
-		String bContent = request.getParameter("bContent");
-		int bStar = Integer.parseInt(request.getParameter("bStar"));
 		BoardRVRepo brvr = new BoardRVRepoImpl();
-		BoardDto boardDto = brvr.select(bNum);
-
+		BoardDto board = brvr.select(bNum);
+		BoardDto preBoard = brvr.select(bNum+1);
+		BoardDto afterBoard = brvr.select(bNum-1);
+		request.setAttribute("board", board);
+		request.setAttribute("preBoard", preBoard);
+		request.setAttribute("afterBoard", afterBoard);
 
 		return "/view/board/contentRV.jsp";
 	}

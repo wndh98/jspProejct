@@ -10,10 +10,8 @@ public class BoardDto {
 	private String bContent;
 	private int bStar;
 	private String bWriter;
-	private String bYoutube;
 	private int bCount;
 	private Date bDate;
-	private int bScreate;
 
 	public int getbNum() {
 		return bNum;
@@ -71,14 +69,6 @@ public class BoardDto {
 		this.bWriter = bWriter;
 	}
 
-	public String getbYoutube() {
-		return bYoutube;
-	}
-
-	public void setbYoutube(String bYoutube) {
-		this.bYoutube = bYoutube;
-	}
-
 	public int getbCount() {
 		return bCount;
 	}
@@ -95,12 +85,11 @@ public class BoardDto {
 		this.bDate = bDate;
 	}
 
-	public int getbScreate() {
-		return bScreate;
+	@Override
+	public String toString() {
+		return "BoardDto [bNum=" + bNum + ", piNum=" + piNum + ", userId=" + userId + ", bSubject=" + bSubject
+				+ ", bContent=" + bContent + ", bStar=" + bStar + ", bWriter=" + bWriter + ", bCount=" + bCount
+				+ ", bDate=" + bDate + "]";
 	}
-
-	public void setbScreate(int bScreate) {
-		this.bScreate = bScreate;
-	}
-
+	
 }

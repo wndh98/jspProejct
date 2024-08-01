@@ -25,9 +25,6 @@ public class CateFilter implements Filter {
 		
 		List<ProductCateDto> cateList =pcr.selectList();
 		Collections.sort(cateList);
-		for(ProductCateDto p : cateList) {
-			System.out.println(p);
-		}
 		request.setAttribute("cateList", cateList);
 		
 		chain.doFilter(request, response);

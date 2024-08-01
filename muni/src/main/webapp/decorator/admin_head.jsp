@@ -20,9 +20,9 @@
 			</a>
 		</div>
 		<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-			<li><a href="#" class="nav-link px-2">회원</a></li>
-			<li><a href="#" class="nav-link px-2">상품카테고리</a></li>
-			<li><a href="#" class="nav-link px-2">상품</a></li>
+			<li><a href="/admin/user/userList.do" class="nav-link px-2">회원</a></li>
+			<li><a href="/admin/product/pcList.do" class="nav-link px-2">상품카테고리</a></li>
+			<li><a href="/admin/product/piList.do" class="nav-link px-2">상품</a></li>
 			<li><a href="#" class="nav-link px-2">주문</a></li>
 		</ul>
 

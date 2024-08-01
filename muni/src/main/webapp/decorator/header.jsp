@@ -90,7 +90,7 @@
 								stroke-linejoin="round" stroke-width="1.5" d="M22 22l-5-5"></path>
 
                             </svg>
-					</a> <a href="https://munigrabby.com/myshop/index.html"> <svg
+					</a> <a href="/user/mypage/orderList.do"> <svg
 							xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 							fill="none" viewBox="0 0 24 24" class="icon" role="img">
                                 <circle cx="11.5" cy="6.5" r="3.75"

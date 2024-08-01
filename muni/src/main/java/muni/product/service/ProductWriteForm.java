@@ -17,7 +17,6 @@ public class ProductWriteForm implements CommandProcess {
 		List<ProductCateDto> list = pcr.selectList();
 		request.setAttribute("list", list);
 		
-		
 		return "/view/admin/product/productWriteForm.jsp";
 	}
 

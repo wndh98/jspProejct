@@ -17,6 +17,6 @@ public class ProductCateUpdateForm implements CommandProcess{
 		ProductCateDto productCate = pcr.findById(pcId);
 		
 		request.setAttribute("productCate", productCate);
-		return "/view/admin/product/productCateUpdateForm.jsp";
+		return "/view/admin/product/productUpdateForm.jsp";
 	}
 }

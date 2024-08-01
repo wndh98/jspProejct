@@ -7,15 +7,27 @@
 		<pattern>/view/user/*</pattern>
 		<pattern>/view/main/*</pattern>
 		<pattern>/user/*</pattern>
+		<pattern>/board/*</pattern>
+		<pattern>/product/*</pattern>
+		<pattern>/order/*</pattern>
 		<pattern>/main.do</pattern>
 	</decorator>
 
 	<decorator name="adminMain" page="admin_view.jsp">
-		<pattern>/view/admin/*</pattern>
-		<pattern>/admin/*</pattern>
+		
+		<pattern>/admin/order/*</pattern>
+		<pattern>/admin/product/*</pattern>
+		<pattern>/admin/user/*</pattern>
 	</decorator>
 	<excludes>
 		<pattern>/view/admin/index.jsp</pattern>
+	</excludes>
+	<excludes>
+		<pattern>/admin/loginForm.do</pattern>
+		<pattern>/admin/loginAction.do</pattern>
+		<pattern>/admin/index.do</pattern>
+		<pattern>/view/admin/index.do</pattern>
+		<pattern>/view/admin/</pattern>
 	</excludes>
 	<excludes>
 		<pattern>/view/order/orderForm.jsp</pattern>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -38,489 +39,89 @@
 						</div>
 					</div>
 					<div class="product_list">
-						<div class="ec-base-product">
-							<ul class="prdList grid4">
-								<li id="product_111">
-									<!-- 상품번호 -->
-									<div class="prdList__item">
-										<div class="thumbnail">
-											<!-- 상품 썸네일 -->
-											<a href="#"> <!-- 썸네일 이미지 --> <img
-												src="/images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
-												loading="lazy">
-											</a>
-											<div class="icon__box">
-												<!-- 아이콘 박스 -->
-												<span class="wish"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
-													class="wish" alt="관심상품 등록 전" productno="111" categoryno="1"
-													icon_status="off" login_status="F" individual-set="F">WISH</span>
-												<span class="cart"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
-													onclick="category_add_basket('111','1', '3', 'A0000', false, '1', 'P00000EI', 'A', 'F', '0');"
-													alt="장바구니 담기" class="cart">CART</span>
-											</div>
-											<div class="dim">
-												<a href="#"></a>
-											</div>
-											<div class="sale_box">50%</div>
-										</div>
-										<div class="description">
-											<!-- 상품명, 가격 -->
-											<div class="name">
-												<a href="#"> <span
-													style="font-size: 12px; color: #555555;">시바견펀치(여)</span>
+						<c:forEach items="${list}" var="product">
+							<!-- 상품번호 -->
+							<div class="ec-base-product">
+								<ul class="prdList grid4">
+									<li>
+										<div class="prdList__item">
+											<div class="thumbnail">
+												<!-- 상품 썸네일 -->
+												<a href="/product/productView.do?=${product.piNum}"> <!-- 썸네일 이미지 --> <img
+													src="/upload/product/${product.piFile1}">
 												</a>
+												<div class="icon__box">
+													<!-- 아이콘 박스 -->
+													<span class="wish"><img
+														src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
+														class="wish">WISH</span> <span class="cart"><img
+														src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
+														class="cart">CART</span>
+												</div>
+												<div class="dim">
+													<a href="#"></a>
+												</div>
+												<div class="sale_box">50%</div>
 											</div>
-											<ul class="spec">
-												<li><span
-													style="font-size: 12px; color: #555555; text-decoration: line-through;">38,000원
-												</span></li>
-												<li><span
-													style="font-size: 12px; color: #e00404; font-weight: bold;">19,000원</span>
-												</li>
-											</ul>
-											<div class="icon">
-												<img src="images/hit.gif" alt=""> <img
-													src="images/sale.gif" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li id="product_112">
-									<!-- 상품번호 -->
-									<div class="prdList__item">
-										<div class="thumbnail">
-											<!-- 상품 썸네일 -->
-											<a href="#"> <!-- 썸네일 이미지 --> <img
-												src="/images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
-												loading="lazy">
-											</a>
-											<div class="icon__box">
-												<!-- 아이콘 박스 -->
-												<span class="wish"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
-													class="wish" alt="관심상품 등록 전" productno="112" categoryno="1"
-													icon_status="off" login_status="F" individual-set="F">WISH</span>
-												<span class="cart"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
-													onclick="category_add_basket('112','1', '3', 'A0000', false, '1', 'P00000EI', 'A', 'F', '0');"
-													alt="장바구니 담기" class="cart">CART</span>
-											</div>
-											<div class="dim">
-												<a href="#"></a>
-											</div>
-											<div class="sale_box">50%</div>
-										</div>
-										<div class="description">
-											<!-- 상품명, 가격 -->
-											<div class="name">
-												<a href="#"> <span
-													style="font-size: 12px; color: #555555;">시바견펀치(여)</span>
-												</a>
-											</div>
-											<ul class="spec">
-												<li><span
-													style="font-size: 12px; color: #555555; text-decoration: line-through;">38,000원
-												</span></li>
-												<li><span
-													style="font-size: 12px; color: #e00404; font-weight: bold;">19,000원</span>
-												</li>
-											</ul>
-											<div class="icon">
-												<img src="images/hit.gif" alt=""> <img
-													src="images/sale.gif" alt="">
+											<div class="description">
+												<!-- 상품명, 가격 -->
+
+												<div class="name">
+													<a href="#"> <span
+														style="font-size: 12px; color: #555555;">${product.piName}</span>
+													</a>
+												</div>
+												<ul class="spec">
+													<li><span
+														style="font-size: 12px; color: #555555; text-decoration: line-through;">${product.piPrice}
+													</span></li>
+													<li><span
+														style="font-size: 12px; color: #e00404; font-weight: bold;">${product.piCprice}</span></li>
+												</ul>
+												<div class="icon">
+													<img src="images/hit.gif" alt=""> <img
+														src="images/sale.gif" alt="">
+												</div>
 											</div>
 										</div>
-									</div>
-								</li>
-								<li id="product_113">
-									<!-- 상품번호 -->
-									<div class="prdList__item">
-										<div class="thumbnail">
-											<!-- 상품 썸네일 -->
-											<a href="#"> <!-- 썸네일 이미지 --> <img
-												src="/images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
-												loading="lazy">
-											</a>
-											<div class="icon__box">
-												<!-- 아이콘 박스 -->
-												<span class="wish"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
-													class="wish" alt="관심상품 등록 전" productno="113" categoryno="1"
-													icon_status="off" login_status="F" individual-set="F">WISH</span>
-												<span class="cart"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
-													onclick="category_add_basket('113','1', '3', 'A0000', false, '1', 'P00000EI', 'A', 'F', '0');"
-													alt="장바구니 담기" class="cart">CART</span>
-											</div>
-											<div class="dim">
-												<a href="#"></a>
-											</div>
-											<div class="sale_box">50%</div>
-										</div>
-										<div class="description">
-											<!-- 상품명, 가격 -->
-											<div class="name">
-												<a href="#"> <span
-													style="font-size: 12px; color: #555555;">시바견펀치(여)</span>
-												</a>
-											</div>
-											<ul class="spec">
-												<li><span
-													style="font-size: 12px; color: #555555; text-decoration: line-through;">38,000원
-												</span></li>
-												<li><span
-													style="font-size: 12px; color: #e00404; font-weight: bold;">19,000원</span>
-												</li>
-											</ul>
-											<div class="icon">
-												<img src="images/hit.gif" alt=""> <img
-													src="images/sale.gif" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li id="product_117">
-									<!-- 상품번호 -->
-									<div class="prdList__item">
-										<div class="thumbnail">
-											<!-- 상품 썸네일 -->
-											<a href="#"> <!-- 썸네일 이미지 --> <img
-												src="/images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
-												loading="lazy">
-											</a>
-											<div class="icon__box">
-												<!-- 아이콘 박스 -->
-												<span class="wish"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
-													class="wish" alt="관심상품 등록 전" productno="117" categoryno="1"
-													icon_status="off" login_status="F" individual-set="F">WISH</span>
-												<span class="cart"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
-													onclick="category_add_basket('117','1', '3', 'A0000', false, '1', 'P00000EI', 'A', 'F', '0');"
-													alt="장바구니 담기" class="cart">CART</span>
-											</div>
-											<div class="dim">
-												<a href="#"></a>
-											</div>
-											<div class="sale_box">50%</div>
-										</div>
-										<div class="description">
-											<!-- 상품명, 가격 -->
-											<div class="name">
-												<a href="#"> <span
-													style="font-size: 14px; color: #000000;">시바견펀치(여)</span>
-												</a>
-											</div>
-											<ul class="spec">
-												<li><span
-													style="font-size: 14px; color: #000000; text-decoration: line-through;">38,000원
-												</span></li>
-												<li><span style="font-size: 16px; color: #000000;">19,000원</span>
-												</li>
-											</ul>
-											<div class="icon">
-												<img src="images/hit.gif" alt=""> <img
-													src="images/sale.gif" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li id="product_118">
-									<!-- 상품번호 -->
-									<div class="prdList__item">
-										<div class="thumbnail">
-											<!-- 상품 썸네일 -->
-											<a href="#"> <!-- 썸네일 이미지 --> <img
-												src="/images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
-												loading="lazy">
-											</a>
-											<div class="icon__box">
-												<!-- 아이콘 박스 -->
-												<span class="wish"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
-													class="wish" alt="관심상품 등록 전" productno="118" categoryno="1"
-													icon_status="off" login_status="F" individual-set="F">WISH</span>
-												<span class="cart"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
-													onclick="category_add_basket('118','1', '3', 'A0000', false, '1', 'P00000EI', 'A', 'F', '0');"
-													alt="장바구니 담기" class="cart">CART</span>
-											</div>
-											<div class="dim">
-												<a href="#"></a>
-											</div>
-											<div class="sale_box">50%</div>
-										</div>
-										<div class="description">
-											<!-- 상품명, 가격 -->
-											<div class="name">
-												<a href="#"> <span
-													style="font-size: 14px; color: #000000;">시바견펀치(여)</span>
-												</a>
-											</div>
-											<ul class="spec">
-												<li><span
-													style="font-size: 14px; color: #000000; text-decoration: line-through;">38,000원
-												</span></li>
-												<li><span style="font-size: 16px; color: #000000;">19,000원</span>
-												</li>
-											</ul>
-											<div class="icon">
-												<img src="images/hit.gif" alt=""> <img
-													src="images/sale.gif" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li id="product_121">
-									<!-- 상품번호 -->
-									<div class="prdList__item">
-										<div class="thumbnail">
-											<!-- 상품 썸네일 -->
-											<a href="#"> <!-- 썸네일 이미지 --> <img
-												src="/images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
-												loading="lazy">
-											</a>
-											<div class="icon__box">
-												<!-- 아이콘 박스 -->
-												<span class="wish"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
-													class="wish" alt="관심상품 등록 전" productno="121" categoryno="1"
-													icon_status="off" login_status="F" individual-set="F">WISH</span>
-												<span class="cart"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
-													onclick="category_add_basket('121','1', '3', 'A0000', false, '1', 'P00000EI', 'A', 'F', '0');"
-													alt="장바구니 담기" class="cart">CART</span>
-											</div>
-											<div class="dim">
-												<a href="#"></a>
-											</div>
-											<div class="sale_box">50%</div>
-										</div>
-										<div class="description">
-											<!-- 상품명, 가격 -->
-											<div class="name">
-												<a href="#"> <span
-													style="font-size: 12px; color: #555555;">시바견펀치(여)</span>
-												</a>
-											</div>
-											<ul class="spec">
-												<li><span
-													style="font-size: 12px; color: #555555; text-decoration: line-through;">38,000원
-												</span></li>
-												<li><span
-													style="font-size: 12px; color: #e00404; font-weight: bold;">19,000원</span>
-												</li>
-											</ul>
-											<div class="icon">
-												<img src="images/hit.gif" alt=""> <img
-													src="images/sale.gif" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li id="product_122">
-									<!-- 상품번호 -->
-									<div class="prdList__item">
-										<div class="thumbnail">
-											<!-- 상품 썸네일 -->
-											<a href="#"> <!-- 썸네일 이미지 --> <img
-												src="/images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
-												loading="lazy">
-											</a>
-											<div class="icon__box">
-												<!-- 아이콘 박스 -->
-												<span class="wish"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
-													class="wish" alt="관심상품 등록 전" productno="122" categoryno="1"
-													icon_status="off" login_status="F" individual-set="F">WISH</span>
-												<span class="cart"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
-													onclick="category_add_basket('122','1', '3', 'A0000', false, '1', 'P00000EI', 'A', 'F', '0');"
-													alt="장바구니 담기" class="cart">CART</span>
-											</div>
-											<div class="dim">
-												<a href="#"></a>
-											</div>
-											<div class="sale_box">50%</div>
-										</div>
-										<div class="description">
-											<!-- 상품명, 가격 -->
-											<div class="name">
-												<a href="#"> <span
-													style="font-size: 12px; color: #555555;">시바견펀치(여)</span>
-												</a>
-											</div>
-											<ul class="spec">
-												<li><span
-													style="font-size: 12px; color: #555555; text-decoration: line-through;">38,000원
-												</span></li>
-												<li><span
-													style="font-size: 12px; color: #e00404; font-weight: bold;">19,000원</span>
-												</li>
-											</ul>
-											<div class="icon">
-												<img src="images/hit.gif" alt=""> <img
-													src="images/sale.gif" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li id="product_123">
-									<!-- 상품번호 -->
-									<div class="prdList__item">
-										<div class="thumbnail">
-											<!-- 상품 썸네일 -->
-											<a href="#"> <!-- 썸네일 이미지 --> <img
-												src="/images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
-												loading="lazy">
-											</a>
-											<div class="icon__box">
-												<!-- 아이콘 박스 -->
-												<span class="wish"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
-													class="wish" alt="관심상품 등록 전" productno="123" categoryno="1"
-													icon_status="off" login_status="F" individual-set="F">WISH</span>
-												<span class="cart"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
-													onclick="category_add_basket('123','1', '3', 'A0000', false, '1', 'P00000EI', 'A', 'F', '0');"
-													alt="장바구니 담기" class="cart">CART</span>
-											</div>
-											<div class="dim">
-												<a href="#"></a>
-											</div>
-											<div class="sale_box">50%</div>
-										</div>
-										<div class="description">
-											<!-- 상품명, 가격 -->
-											<div class="name">
-												<a href="#"> <span
-													style="font-size: 12px; color: #555555;">시바견펀치(여)</span>
-												</a>
-											</div>
-											<ul class="spec">
-												<li><span
-													style="font-size: 12px; color: #555555; text-decoration: line-through;">38,000원
-												</span></li>
-												<li><span
-													style="font-size: 12px; color: #e00404; font-weight: bold;">19,000원</span>
-												</li>
-											</ul>
-											<div class="icon">
-												<img src="images/hit.gif" alt=""> <img
-													src="images/sale.gif" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li id="product_124">
-									<!-- 상품번호 -->
-									<div class="prdList__item">
-										<div class="thumbnail">
-											<!-- 상품 썸네일 -->
-											<a href="#"> <!-- 썸네일 이미지 --> <img
-												src="/images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
-												loading="lazy">
-											</a>
-											<div class="icon__box">
-												<!-- 아이콘 박스 -->
-												<span class="wish"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
-													class="wish" alt="관심상품 등록 전" productno="124" categoryno="1"
-													icon_status="off" login_status="F" individual-set="F">WISH</span>
-												<span class="cart"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
-													onclick="category_add_basket('124','1', '3', 'A0000', false, '1', 'P00000EI', 'A', 'F', '0');"
-													alt="장바구니 담기" class="cart">CART</span>
-											</div>
-											<div class="dim">
-												<a href="#"></a>
-											</div>
-											<div class="sale_box">50%</div>
-										</div>
-										<div class="description">
-											<!-- 상품명, 가격 -->
-											<div class="name">
-												<a href="#"> <span
-													style="font-size: 14px; color: #000000;">시바견펀치(여)</span>
-												</a>
-											</div>
-											<ul class="spec">
-												<li><span
-													style="font-size: 14px; color: #000000; text-decoration: line-through;">38,000원
-												</span></li>
-												<li><span style="font-size: 16px; color: #000000;">19,000원</span>
-												</li>
-											</ul>
-											<div class="icon">
-												<img src="images/hit.gif" alt=""> <img
-													src="images/sale.gif" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-								<li id="product_125">
-									<!-- 상품번호 -->
-									<div class="prdList__item">
-										<div class="thumbnail">
-											<!-- 상품 썸네일 -->
-											<a href="#"> <!-- 썸네일 이미지 --> <img
-												src="/images/6de767f8667c32d13761c505f8681e65.jpg" alt="dog"
-												loading="lazy">
-											</a>
-											<div class="icon__box">
-												<!-- 아이콘 박스 -->
-												<span class="wish"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
-													class="wish" alt="관심상품 등록 전" productno="125" categoryno="1"
-													icon_status="off" login_status="F" individual-set="F">WISH</span>
-												<span class="cart"><img
-													src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
-													onclick="category_add_basket('125','1', '3', 'A0000', false, '1', 'P00000EI', 'A', 'F', '0');"
-													alt="장바구니 담기" class="cart">CART</span>
-											</div>
-											<div class="dim">
-												<a href="#"></a>
-											</div>
-											<div class="sale_box">50%</div>
-										</div>
-										<div class="description">
-											<!-- 상품명, 가격 -->
-											<div class="name">
-												<a href="#"> <span
-													style="font-size: 14px; color: #000000;">시바견펀치(여)</span>
-												</a>
-											</div>
-											<ul class="spec">
-												<li><span
-													style="font-size: 14px; color: #000000; text-decoration: line-through;">38,000원
-												</span></li>
-												<li><span style="font-size: 16px; color: #000000;">19,000원</span>
-												</li>
-											</ul>
-											<div class="icon">
-												<img src="images/hit.gif" alt=""> <img
-													src="images/sale.gif" alt="">
-											</div>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="paging">
-							<a class="first_btn"></a> <a class="prev_btn"></a>
-							<ul class="page_list">
-								<li><a class="on" href="#none">1</a></li>
-								<li><a href="#none">2</a></li>
-								<li><a href="#none">3</a></li>
-								<li><a href="#none">4</a></li>
-								<li><a href="#none">5</a></li>
-							</ul>
-							<a class="next_btn"></a> <a class="last_btn"></a>
-						</div>
+									</li>
+								</ul>
+							</div>
+						<%-- 	<tr>
+								<td>${product.piName}</td>
+								<td>${product.piPrice}</td>
+								<td>${product.piCprice}</td>
+								<td>${product.piCount}</td>
+							</tr> --%>
+						</c:forEach>
 					</div>
 				</div>
+			</div>
+
+			<div class="paging">
+				<c:if test="${pagination.curPage ne 1 }">
+					<a class="prev_btn"
+						href="/aproduct/piList.do?curPage=${pagination.prevPage}"></a>
+				</c:if>
+				<ul class="page_list">
+					<c:forEach var="pageNum" begin="${pagination.startPage}"
+						end="${pagination.endPage }">
+						<c:choose>
+							<c:when test="${pageNum eq pagination.curPage}">
+								<li><a class="on"
+									href="/product/piList.do?curPage=${pageNum}">${pageNum }</a></li>
+							</c:when>
+							<c:otherwise>
+								<li><a href="/product/piList.do?curPage=${pageNum}">${pageNum}</a></li>
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+				</ul>
+				<c:if
+					test="${pagination.curPage ne pagination.pageCnt && pagination.pageCnt > 0}">
+					<a class="next_btn"
+						href="/product/piList.do?curPage=${pagination.nextPage }"></a>
+				</c:if>
 			</div>
 		</div>
 	</div>

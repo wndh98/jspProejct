@@ -6,10 +6,13 @@
 		<id property="pcId" column="pc_id" />
 		<result property="pcName" column="pc_name" />
 	</resultMap>
+
 	<resultMap id="productItemMap" type="ProductItem">
 		<id property="piNum" column="PI_NUM" />
+		<result property="pcId" column="pc_id" />
 		<result property="piName" column="PI_NAME" />
 		<result property="piCprice" column="PI_CPRICE" />
+		<result property="piSail" column="PI_SAIL" />
 		<result property="piPrice" column="PI_PRICE" />
 		<result property="piSailPrice" column="PI_SAIL_PRICE" />
 		<result property="piDelivery" column="PI_DELIVERY" />
@@ -70,6 +73,8 @@
 	</update>
 
 
+	<!-- ======================== -->
+
 	<insert id="piInsert" parameterType="ProductItem">
 		insert into
 		PRODUCT_ITEM(PC_ID,PI_HIT,PI_NAME,PI_CPRICE,PI_PRICE,PI_SAIL_PRICE,PI_DELIVERY,PI_COUNT,PI_POINT,PI_CONTENT,
@@ -78,10 +83,48 @@
 		#{piDelivery},#{piCount},#{piPoint},#{piContent},#{piFile1},#{piFile2},
 		#{piFile3},#{piFile4},#{piFile5},#{piFile6},#{piFile7},sysdate)
 	</insert>
-
+	<delete id="piDelete" parameterType="int">
+		delete from PRODUCT_ITEM
+		where PI_NUM=#{piNum}
+	</delete>
 	<select id="piselectList" resultMap="productItemMap">
-		select pi_Name, pi_Price,pi_Count, pi_Delivery from PRODUCT_ITEM
+		select * from PRODUCT_Item
+		order by pi_Num desc offset #{startIndex} rows fetch next #{pageSize}
+		rows only
+	</select>
+	<select id="piSelectItemList" parameterType="ProductItem">
+		select
+		PI_NUM,PI_SAIL,PI_SAIL_PRICE,PI_DELIVERY,PI_COUNT
+		from PRODUCT_ITEM
+	</select>
+	<!-- paging -->
+	<select id="findByAllCnt" resultType="int">
+		select count(*) from
+		PRODUCT_Item
+	</select>
+	<select id="findById" resultMap="productItemMap"
+		parameterType="int">
+		select * from PRODUCT_Item where PI_NUM=#{piNum}
 	</select>
 
+	<select id="selectItemList" parameterType="pagination"
+		resultMap="productItemMap">
+		select * from PRODUCT_Item order by pi_NUM
+		asc offset
+		#{startIndex} rows fetch next #{pageSize} rows only
+	</select>
 
+	<update id="piUpdate" parameterType="ProductItem">
+		update PRODUCT_ITEM set
+		PC_ID = #{pcId},PI_NAME = #{piName},PI_CPRICE = #{piCprice},PI_PRICE =
+		#{piPrice},PI_SAIL_PRICE = #{piSailPrice},PI_DELIVERY =
+		#{piDelivery},PI_COUNT = #{piCount},PI_CONTENT = #{piContent} ,PI_HIT
+		= #{piHit},PI_FILE1 = #{piFile1},PI_FILE2 = #{piFile2},PI_FILE3 =
+		#{piFile3},PI_FILE4 = #{piFile4},PI_FILE5 = #{piFile5},PI_FILE6 =
+		#{piFile6},PI_FILE7 = #{piFile7} where pi_num = #{piNum}
+
+	</update>
+
+
+	<!-- ============================== -->
 </mapper>

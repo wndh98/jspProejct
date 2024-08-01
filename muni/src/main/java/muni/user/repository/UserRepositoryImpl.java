@@ -1,8 +1,11 @@
 package muni.user.repository;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import muni.mybatis.MybatisSqlSessionFactory;
+import muni.paging.Pagination;
 import muni.user.dto.UserDto;
 
 public class UserRepositoryImpl implements UserRepository {
@@ -38,6 +41,38 @@ public class UserRepositoryImpl implements UserRepository {
 		ss.close();
 		return user;
 		
+	}
+
+	@Override
+	public int findByAllCnt() {
+		SqlSession ss = MybatisSqlSessionFactory.getSqlSession(true);
+		int result = ss.selectOne("userns.findByAllCnt");
+		ss.close();
+		return result;
+	}
+
+	@Override
+	public List<UserDto> selectUserList(Pagination pagination) {
+		SqlSession ss = MybatisSqlSessionFactory.getSqlSession(true);
+		List<UserDto> list = ss.selectList("userns.selectUserList",pagination);
+		ss.close();
+		return list;
+	}
+
+	@Override
+	public int userUpdate(UserDto user) {
+		SqlSession ss = MybatisSqlSessionFactory.getSqlSession(true);
+		int result = ss.update("userns.userUpdate",user);
+		ss.close();
+		return result;
+	}
+
+	@Override
+	public int userDelete(String userId) {
+		SqlSession ss = MybatisSqlSessionFactory.getSqlSession(true);
+		int result = ss.update("userns.userDelete",userId);
+		ss.close();
+		return result;
 	}
 
 }

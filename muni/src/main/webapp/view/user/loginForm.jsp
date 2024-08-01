@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="kr">
 
@@ -8,6 +9,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <link rel="stylesheet" href="/css/user/user.css">
+<c:if test="${userId!=null }">
+	<script>
+		alert("잘못된 접근입니다.");
+		location.href="/";
+	</script>
+</c:if>
 </head>
 
 
@@ -29,7 +36,7 @@
 				</div>
 			</form>
 			<div class="member_search">
-				<a href="#none">아이디 찾기</a> <a href="#none">비밀번호 찾기</a>
+				<a href="/user/userIdSearchForm.do">아이디 찾기</a> <a href="/user/userPwSearchForm.do">비밀번호 찾기</a>
 			</div>
 			<div class="member_join">
 				<strong>아직 회원이 아니신가요?</strong>

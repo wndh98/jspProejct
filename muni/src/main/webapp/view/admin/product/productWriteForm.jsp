@@ -38,7 +38,7 @@ table {
 			<div class="board_container">
 				<div class="board_content">
 
-					<form action="/admin/product/piWrite.do" method="post">
+					<form action="/admin/product/piWrite.do" method="post" enctype="multipart/form-data">
 						<div class="boardTitle">
 							<h3>기본</h3>
 						</div>
@@ -49,11 +49,12 @@ table {
 							</colgroup>
 							<tr>
 								<th>카테고리</th>
-								<td><select>
-										<option>
-											<c:forEach var="proCate" items="${list}" varStatus="vs">
-											${proCate.pcName}</c:forEach>
-										</option>
+								<td><select name="pcId">
+										<c:forEach var="proCate" items="${list}" varStatus="vs">
+											<option value="${proCate.pcId}">
+												${proCate.pcName}
+											</option>
+										</c:forEach>
 								</select></td>
 							</tr>
 							<tr>
@@ -141,8 +142,8 @@ table {
 							</tr>
 						</table>
 						<div class="btn_menu">
-							<button class="btnBold" type="button" onclick="location.href=''">이전</button>
-							<button class="btnBold_w">작성하기</button>
+							<button class="btnBold" type="button" onclick="location.href='/admin/product/piList.do'">이전</button>
+							<button class="btnBold_w" >작성하기</button>
 						</div>
 					</form>
 				</div>

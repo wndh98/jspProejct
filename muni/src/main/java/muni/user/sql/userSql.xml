@@ -5,36 +5,50 @@
 <mapper namespace="userns">
 	<resultMap id="userResultMap" type="user">
 		<id property="userNum" column="USER_NUM" />
-		<id property="userId" column="USER_ID" />
-		<id property="userPassword" column="USER_PASSWORD" />
-		<id property="userType" column="USER_TYPE" />
-		<id property="userName" column="USER_NAME" />
-		<id property="userAddressNum" column="USER_ADDRESS_NUM" />
-		<id property="userAddress" column="USER_ADDRESS" />
-		<id property="userAddressEtc" column="USER_ADDRESS_ETC" />
-		<id property="userTel" column="USER_PHONE" />
-		<id property="userPhone" column="USER_TEL" />
-		<id property="userEmail" column="USER_EMAIL" />
-		<id property="userSolar" column="USER_SOLAR" />
-		<id property="userBirthday" column="USER_BIRTHDAY" />
-		<id property="userComName" column="USER_COM_NAME" />
-		<id property="userComNum" column="USER_COM_NUM" />
-		<id property="userCoNum" column="USER_CO_NUM" />
-		<id property="userRecommend" column="USER_RECOMMEND" />
-		<id property="userPoint" column="USER_POINT" />
-		<id property="userDel" column="USER_DEL" />
-		<id property="userSnsAgree" column="USER_SNS_AGREE" />
-		<id property="userEmailAgree" column="USER_EMAIL_AGREE" />
-		<id property="userRegist" column="USER_REGIST" />
+		<result property="userId" column="USER_ID" />
+		<result property="userPassword" column="USER_PASSWORD" />
+		<result property="userName" column="USER_NAME" />
+		<result property="userAddressNum" column="USER_ADDRESS_NUM" />
+		<result property="userAddress" column="USER_ADDRESS" />
+		<result property="userAddressEtc" column="USER_ADDRESS_ETC" />
+		<result property="userTel" column="USER_TEL" />
+		<result property="userPhone" column="USER_PHONE" />
+		<result property="userEmail" column="USER_EMAIL" />
+		<result property="userSolar" column="USER_SOLAR" />
+		<result property="userBirthday" column="USER_BIRTHDAY" />
+		<result property="userRecommend" column="USER_RECOMMEND" />
+		<result property="userPoint" column="USER_POINT" />
+		<result property="userDel" column="USER_DEL" />
+		<result property="userSnsAgree" column="USER_SNS_AGREE" />
+		<result property="userEmailAgree" column="USER_EMAIL_AGREE" />
+		<result property="userRegist" column="USER_REGIST" />
 	</resultMap>
 	<select id="loginFindById" resultMap="userResultMap">
-		select * from muni_user where user_id = #{userId} and user_del='n'
+		select * from muni_user where user_id = #{userId} and user_del='N'
 	</select>
 	<select id="findById" resultMap="userResultMap">
 		select * from muni_user where user_id = #{userId}
 	</select>
+	<select id="findByAllCnt" resultType="int">
+		select count(*) from muni_user
+	</select>
+	<select id="selectUserList" parameterType="pagination" resultMap="userResultMap">
+		select * from muni_user where USER_DEL='N' order by USER_NUM asc offset #{startIndex} rows fetch next #{pageSize} rows only
+	</select>
 	<insert id="insert" parameterType="user">
-		insert into muni_user(USER_ID,USER_PASSWORD,USER_TYPE,USER_NAME,USER_ADDRESS_NUM,USER_ADDRESS,USER_ADDRESS_ETC,USER_TEL,USER_PHONE,USER_EMAIL,USER_SOLAR,USER_BIRTHDAY,USER_COM_NAME,USER_COM_NUM,USER_CO_NUM,USER_RECOMMEND,USER_POINT,USER_DEL,USER_SNS_AGREE,USER_EMAIL_AGREE,USER_REGIST) values
-		(#{userId},#{userPassword},#{userType},#{userName},#{userAddressNum},#{userAddress},#{userAddressEtc},#{userTel},#{userPhone},#{userEmail},#{userSolar},#{userBirthday},#{userComName},#{userComNum},#{userCoNum},#{userRecommend},#{userPoint},'n',#{userSnsAgree},#{userEmailAgree},sysdate)
+		insert into muni_user(USER_ID,USER_PASSWORD,USER_NAME,USER_ADDRESS_NUM,USER_ADDRESS,USER_ADDRESS_ETC,USER_TEL,USER_PHONE,USER_EMAIL,USER_SOLAR,USER_BIRTHDAY,USER_RECOMMEND,USER_POINT,USER_DEL,USER_SNS_AGREE,USER_EMAIL_AGREE,USER_REGIST) values
+		(#{userId},#{userPassword},#{userName},#{userAddressNum},#{userAddress},#{userAddressEtc},#{userTel},#{userPhone},#{userEmail},#{userSolar},#{userBirthday},#{userRecommend},#{userPoint},'N',#{userSnsAgree},#{userEmailAgree},sysdate)
 	</insert>
+	<update id="userUpdate" parameterType="user">
+		update muni_user set 
+		<if test="userPassword!=null">
+		USER_PASSWORD=#{userPassword},
+		</if>
+		USER_NAME=#{userName},USER_ADDRESS_NUM=#{userAddressNum},USER_ADDRESS=#{userAddress},USER_ADDRESS_ETC=#{userAddressEtc},
+		USER_TEL=#{userTel},USER_PHONE=#{userPhone},USER_EMAIL=#{userEmail},USER_SOLAR=#{userSolar},USER_BIRTHDAY=#{userBirthday},
+		USER_RECOMMEND=#{userRecommend},USER_SNS_AGREE=#{userSnsAgree},USER_EMAIL_AGREE=#{userEmailAgree} where USER_ID=#{userId}
+	</update>
+	<update id="userDelete" parameterType="string">
+		update muni_user set USER_DEL='Y' where USER_ID=#{userId}
+	</update>
 </mapper>

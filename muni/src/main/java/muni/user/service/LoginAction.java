@@ -22,7 +22,7 @@ public class LoginAction implements CommandProcess {
 		UserDto user = ur.loginFindById(userId);
 		
 		if(user==null)result=-1; // 회원이 없을시
-		if(user.getUserPassword().equals(userPassword)) {
+		else if(user.getUserPassword().equals(userPassword)) {
 			result=1; // 일치할시
 			HttpSession session = request.getSession();
 			session.setAttribute("userId", userId);

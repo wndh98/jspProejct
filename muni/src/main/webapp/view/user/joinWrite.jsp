@@ -6,6 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<c:if test="${userId!=null }">
+	<script>
+		alert("잘못된 접근입니다.");
+		location.href="/";
+	</script>
+</c:if>
 </head>
 <body>
 	<c:if test="${result>0 }">

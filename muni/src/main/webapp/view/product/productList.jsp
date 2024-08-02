@@ -47,8 +47,8 @@
 										<div class="prdList__item">
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
-												<a href="/product/piView.do?piNum=${product.piNum}"> <!-- 썸네일 이미지 --> <img
-													src="/upload/product/${product.piFile1}">
+												<a href="/product/productView.do?=${product.piNum}"> <!-- 썸네일 이미지 -->
+													<img src="/upload/product/${product.piFile1}">
 												</a>
 												<div class="icon__box">
 													<!-- 아이콘 박스 -->
@@ -87,7 +87,7 @@
 									</li>
 								</ul>
 							</div>
-						<%-- 	<tr>
+							<%-- 	<tr>
 								<td>${product.piName}</td>
 								<td>${product.piPrice}</td>
 								<td>${product.piCprice}</td>

@@ -1,17 +1,17 @@
-package muni.board.service;
+package muni.board.service.free;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import muni.board.dto.BoardDto;
-import muni.board.repository.BoardRVRepo;
-import muni.board.repository.BoardRVRepoImpl;
+import muni.board.repository.BoardRepo;
+import muni.board.repository.FreeRepoImpl;
 import muni.controller.CommandProcess;
 import muni.user.dto.UserDto;
 import muni.user.repository.UserRepository;
 import muni.user.repository.UserRepositoryImpl;
 
-public class ReviewWrite implements CommandProcess {
+public class FreeWrite implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -29,7 +29,7 @@ public class ReviewWrite implements CommandProcess {
 			// 화면에서 데이터 받기
 			String bSubject = request.getParameter("bSubject");
 			String bContent = request.getParameter("bContent");
-			int bStar = Integer.parseInt(request.getParameter("bStar"));
+//			int bStar = Integer.parseInt(request.getParameter("bStar"));
 			
 			
 			// DTO에 데이터 채우기
@@ -39,15 +39,15 @@ public class ReviewWrite implements CommandProcess {
 			board.setbWriter(user.getUserName());
 			board.setbSubject(bSubject);
 			board.setbContent(bContent);
-			board.setbStar(bStar);
+//			board.setbStar(bStar);
 			// Dao에 데이터 입력 요청
-			BoardRVRepo brvr = new BoardRVRepoImpl();
+			BoardRepo brvr = new FreeRepoImpl();
 			System.out.println(board);
 			result = brvr.insert(board);
 			// 결과를 jsp에 전달하기
 		}
 		request.setAttribute("result", result);
-		return "/view/board/writeRV.jsp";
+		return "/view/board/boardWrite.jsp";
 	}
 
 }

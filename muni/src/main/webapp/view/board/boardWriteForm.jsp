@@ -27,13 +27,13 @@
 			<ul>
 				<li><a href="/main.do">홈</a></li>
 				<li><a href="#none">게시판</a></li>
-				<li><a href="/board/RVList.do">상품 사용후기</a></li>
+				<li><a href="boardList.do">${title}</a></li>
 			</ul>
 		</div>
 		<div class="board_container">
-			<h1 class="title1">상품 사용후기</h1>
+			<h1 class="title1">${title}</h1>
 			<div class="board_content">
-				<form action="/board/reviewWrite.do" method="post">
+				<form action="boardWrite.do" method="post">
 					<input type="hidden" name="piNum" value="">
 					<table class="boardForm">
 						<colgroup>
@@ -53,6 +53,7 @@
 								<!-- <div id="froala" style="height: 500px"></div> -->
 							</td>
 						</tr>
+						<c:if test="${boardType eq 'review' }">
 						<tr>
 							<th>평점</th>
 							<td>
@@ -68,6 +69,7 @@
 								<label for="rate5">1★</label>
 							</td>
 						</tr>
+						</c:if>
 						<!-- 					<tr>
 							<th>첨부파일</th>
 							<td><input type="file" name=""></td>

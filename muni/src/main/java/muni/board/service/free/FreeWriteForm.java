@@ -1,11 +1,11 @@
-package muni.board.service;
+package muni.board.service.free;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import muni.controller.CommandProcess;
 
-public class ReviewWriteForm implements CommandProcess {
+public class FreeWriteForm implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -15,7 +15,8 @@ public class ReviewWriteForm implements CommandProcess {
 			curPage = Integer.parseInt(pcurPage);
 		}
 		request.setAttribute("curPage", curPage);
-		return "/view/board/writeRVForm.jsp";
+		request.setAttribute("title", "자유게시판	");
+		return "/view/board/boardWriteForm.jsp";
 	}
 
 }

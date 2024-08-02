@@ -47,9 +47,9 @@
 							고객센터 <i aria-hidden="true" class="icoArrowBottom"></i>
 						</a>
 						<ul class="service_center_board">
-							<li class="announcement"><a href="/board/noticeList.do">공지사항</a></li>
-							<li class="announcement"><a href="/board/reviewList.do">상품 사용후기</a></li>
-							<li class="announcement"><a href="/board/freeList.do">자유게시판</a></li>
+							<li class="announcement"><a href="/board/notice/boardList.do">공지사항</a></li>
+							<li class="announcement"><a href="/board/review/boardList.do">상품 사용후기</a></li>
+							<li class="announcement"><a href="/board/free/boardList.do">자유게시판</a></li>
 						</ul>
 					</div>
 				</div>
@@ -143,9 +143,9 @@
 							</div>
 
 							<ul class="categoryList">
-								<li><a href="/board/noticeList.do">공지사항</a></li>
-								<li><a href="/board/reviewList.do">상품 사용후기</a></li>
-								<li><a href="/board/freeList.do">자유게시판</a></li>
+								<li><a href="/board/notice/boardList.do">공지사항</a></li>
+								<li><a href="/board/review/boardList.do">상품 사용후기</a></li>
+								<li><a href="/board/free/boardList.do">자유게시판</a></li>
 							</ul>
 						</div>
 					</div>

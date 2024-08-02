@@ -47,7 +47,7 @@
 										<div class="prdList__item">
 											<div class="thumbnail">
 												<!-- 상품 썸네일 -->
-												<a href="/product/productView.do?=${product.piNum}"> <!-- 썸네일 이미지 --> <img
+												<a href="/product/piView.do?piNum=${product.piNum}"> <!-- 썸네일 이미지 --> <img
 													src="/upload/product/${product.piFile1}">
 												</a>
 												<div class="icon__box">
@@ -59,7 +59,7 @@
 														class="cart">CART</span>
 												</div>
 												<div class="dim">
-													<a href="#"></a>
+													<a href="/product/piView.do?piNum=${product.piNum}"></a>
 												</div>
 												<div class="sale_box">50%</div>
 											</div>

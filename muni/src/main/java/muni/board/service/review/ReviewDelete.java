@@ -1,16 +1,16 @@
-package muni.board.service;
+package muni.board.service.review;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import muni.board.repository.BoardRVRepo;
+import muni.board.repository.BoardRepo;
 import muni.board.repository.BoardRVRepoImpl;
 import muni.controller.CommandProcess;
 
 public class ReviewDelete implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		BoardRVRepo brr = new BoardRVRepoImpl();
+		BoardRepo brr = new BoardRVRepoImpl();
 		int curPage=1;
 		String pcurPage=request.getParameter("curPage");
 		if(pcurPage!=null && !pcurPage.equals("")) {
@@ -24,6 +24,6 @@ public class ReviewDelete implements CommandProcess {
 		int result =0;
 		result = brr.delete(bNum);
 		request.setAttribute("result", result);
-		return "/view/board/reviewDelete.jsp";
+		return "/view/board/boardDelete.jsp";
 	}
 }

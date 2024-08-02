@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="reviewns">
+<mapper namespace="noticens">
 	<resultMap type="board" id="boardResultMap">
 		<id property="bNum" column="B_NUM" />
 		<id property="piNum" column="PI_NUM" />
@@ -16,10 +16,10 @@
 	</resultMap>
 
 	<select id="selectList" resultMap="boardResultMap" parameterType="pagination">
-		select * from BOARD_REVIEW order by B_NUM DESC offset #{startIndex} rows fetch next #{pageSize} rows only
+		select * from BOARD_NOTICE order by B_NUM DESC offset #{startIndex} rows fetch next #{pageSize} rows only
 	</select>
 	<insert id="insert" parameterType="board">
-		insert into BOARD_REVIEW(
+		insert into BOARD_NOTICE(
 		PI_NUM,
 		USER_ID,
 		B_SUBJECT,
@@ -46,20 +46,20 @@
 		)
 	</insert>
 	<select id="select" parameterType="int" resultMap="boardResultMap">
-		select * from BOARD_REVIEW
+		select * from BOARD_NOTICE
 		where B_NUM=#{bNum}
 	</select>
 	<select id="findByAllCnt" resultType="int">
-		select count(*) from BOARD_REVIEW
+		select count(*) from BOARD_NOTICE
 	</select>
 	<update id="update" parameterType="board">
-		update BOARD_REVIEW set
+		update BOARD_NOTICE set
 		B_SUBJECT=#{bSubject}, B_CONTENT=#{bContent}, B_STAR=#{bStar} where B_NUM=#{bNum}
-	</update>
+	</update>	
 	<update id="updateCount" parameterType="int">
-		update BOARD_REVIEW set B_COUNT = B_COUNT+1 where B_NUM=#{bNum}
+		update BOARD_NOTICE set B_COUNT = B_COUNT+1 where B_NUM=#{bNum}
 	</update>
 	<delete id="delete" parameterType="int">
-		delete from BOARD_REVIEW where B_Num=#{bNum}
+		delete from BOARD_NOTICE where B_Num=#{bNum}
 	</delete>
 </mapper>

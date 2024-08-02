@@ -29,7 +29,7 @@
 					<li>3. 주문완료</li>
 				</ul>
 			</div>
-			<form>
+			<form action="/order/cartInsert.do" method="post">
 				<div class="cart_container">
 					<div class="section_menu">
 						<ul>

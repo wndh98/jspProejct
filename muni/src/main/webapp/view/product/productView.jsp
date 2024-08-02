@@ -43,56 +43,58 @@
 			</div>
 
 			<div class="product_explain">
-					<form method="post"
-						action="/order/orderForm.do">
-						<input type="hidden" name="piNum" value="${product.piNum}">
-						<input type="hidden" name="piPrice" value="${product.piPrice}">
-						<h1>상품명</h1>
-						<div class="basic_info">
+				<form method="post" action="/order/orderForm.do?=${product.piNum}">
+					<input type="hidden" name="piNum" value="${product.piNum}">
+					<input type="hidden" name="piPrice" value="${product.piPrice}">
+					<h1>상품명</h1>
+					<div class="basic_info">
 
-							<ul>
-								<li><span>소비자가</span>${product.piCprice }</li>
-								<li><span>할인판매가</span>${product.piSail }</li>
-								<li><span>한번더할인</span>${product.piSailPrice }</li>
-								<li><span>배송비</span>${product.piDelivery }</li>
-								<li><span>재고수량</span>${product.piCount }</li>
-							</ul>
-						</div>
+						<ul>
+							<li><span>소비자가</span>${product.piCprice }</li>
+							<li><span>할인판매가</span>${product.piSail }</li>
+							<li><span>한번더할인</span>${product.piSailPrice }</li>
+							<li><span>배송비</span>${product.piDelivery }</li>
+							<li><span>재고수량</span>${product.piCount }</li>
+						</ul>
+					</div>
 
 
-						<div class="product_select">
+					<div class="product_select">
 
-							<div class="product">
-								<div class="text">
-									<p>상품명</p>
-								</div>
-								<div class="count_btn">
-									<button type="button" class="btnNormal_w increase">-</button>
-									<input type="number" name="piCount" class="increase_input">
-									<button type="button" class="btnNormal_w increase">+</button>
-								</div>
+						<div class="product">
+							<div class="text">
+								<p>상품명</p>
 							</div>
-							<div class="info">
-								<p class="price">0원</p>
-
+							<div class="count_btn">
+								<button type="button" class="btnNormal_w increase">-</button>
+								<input type="number" name="piCount" class="increase_input">
+								<button type="button" class="btnNormal_w increase">+</button>
 							</div>
 						</div>
+						<div class="info">
+							<p class="price">0원</p>
 
-						<div class="product_price">
-							<div class="price_text">
-								<span>TOTAL</span>(QUANTITY)
-							</div>
-							<div class="price_info">
-								<span id="price">0원</span><span id="count">(0개)</span>
-							</div>
 						</div>
-						<div class="product_button">
-							<button class="btn_black">BUY IT NOW</button>
-							<button class="btn_white">CART</button>
-							<button class="btn_white">WISH LIST</button>
+					</div>
+
+					<div class="product_price">
+						<div class="price_text">
+							<span>TOTAL</span>(QUANTITY)
 						</div>
-					</form>
-		
+						<div class="price_info">
+							<span id="price">0원</span><span id="count">(0개)</span>
+						</div>
+					</div>
+					<div class="product_button">
+						<button class="btn_black" type="button"
+							onclick="location.href='/order/orderForm.do'">BUY IT NOW</button>
+						<button class="btn_white" type="button"
+							onclick="location.href='/order/orderCart.do'">CART</button>
+						<button class="btn_white" type="button"
+							onclick="location.href='/order/wishList.do'">WISH LIST</button>
+					</div>
+				</form>
+
 			</div>
 		</div>
 		<section id="section1">

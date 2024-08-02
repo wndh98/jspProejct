@@ -7,6 +7,7 @@
 		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
 	<typeAliases>
+    <typeAlias alias="board" type="muni.board.dto.BoardDto" />
 		<typeAlias alias="deli" type="muni.user.dto.UserDeliveryDto" />
 		<typeAlias alias="user" type="muni.user.dto.UserDto" />
 		<typeAlias alias="ProductCate" type="muni.product.dto.ProductCateDto" />
@@ -26,6 +27,7 @@
 		</environment>
 	</environments>
 	<mappers>
+    <mapper resource="muni/board/sql/review.xml" />
 		<mapper resource="muni/user/sql/userSql.xml" />
 		<mapper resource="muni/user/sql/userDeli.xml" />
 		<mapper resource="muni/product/sql/product.xml"/>

@@ -75,6 +75,22 @@ public class UserRepositoryImpl implements UserRepository {
 		return result;
 	}
 
+	@Override
+	public List<UserDto> searchUserId(UserDto user) {
+		SqlSession ss = MybatisSqlSessionFactory.getSqlSession(true);
+		List<UserDto> list = ss.selectList("userns.searchUserId",user);
+		ss.close();
+		return list;
+	}
+
+	@Override
+	public int changePw(UserDto user) {
+		SqlSession ss = MybatisSqlSessionFactory.getSqlSession(true);
+		int result = ss.update("userns.changePw",user);
+		ss.close();
+		return result;
+	}
+
 }
 
 

@@ -20,7 +20,6 @@ public class UserUpdate implements CommandProcess {
 		String userId = request.getParameter("userId");
 		UserDto user2 = ur.findById(userId);
 		if (user2 != null) {
-
 			String userPassword = request.getParameter("userPassword");
 			if (userPassword.equals(""))
 				userPassword = null;

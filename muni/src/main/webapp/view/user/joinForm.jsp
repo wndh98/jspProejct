@@ -65,7 +65,7 @@
 								<img src="/images/ico_required.svg"> 비밀번호
 							</th>
 							<td>
-								<input type="password" name="userPassword" maxlength="16" minlength="4" required="required" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,16}" title="영문 대소문자, 숫자, 특수문자 중 2가지 이상의 조합, 10~16자 길이로 입력해주세요.">
+								<input type="password" name="userPassword" maxlength="16" minlength="4" required="required" pattern="^(?=.*[a-zA-Z])(?=.*\d|.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{10,16}$|^(?=.*\d)(?=.*[a-zA-Z!@#$%^&*])[\d!@#$%^&*a-zA-Z]{10,16}$|^(?=.*[!@#$%^&*])(?=.*[a-zA-Z\d])[!@#$%^&*a-zA-Z\d]{10,16}$" title="영문 대소문자, 숫자, 특수문자 중 2가지 이상의 조합, 10~16자 길이로 입력해주세요.">
 								<span>(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)</span>
 							</td>
 						</tr>

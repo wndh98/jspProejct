@@ -17,15 +17,15 @@
 			<ul>
 				<li><a href="/main.do">홈</a></li>
 				<li><a href="#none">게시판</a></li>
-				<li><a href="/board/RVList.do">
-						<strong>상품 사용후기</strong>
+				<li><a href="boardList.do">
+						<strong>${title }</strong>
 					</a></li>
 			</ul>
 		</div>
 		<div class="board_container">
-			<h1 class="title1">상품 사용후기</h1>
-			<h2 class="title2">상품 사용후기입니다.</h2>
-			<div class="product">
+			<h1 class="title1">${title }</h1>
+			<h2 class="title2">${title }입니다.</h2>
+<!-- 			<div class="product">
 				<p class="thumbnail">
 					<a href="#">
 						<img src="/images/product/product1.png" alt="">
@@ -37,12 +37,15 @@
 					</h3>
 					<p class="price">25,000원</p>
 				</div>
-			</div>
+			</div> -->
 			<div class="board_content">
 				<div class="board_top">
 					<h3>${board.bSubject }</h3>
 					<div class="description">
-						<span>${board.bWriter }</span> <span>${board.bDate }</span> <span>${board.bCount }</span> <span>${board.bStar }</span>
+						<span>${board.bWriter }</span> <span>${board.bDate }</span> <span>${board.bCount }</span>
+						<c:if test="${boardType eq 'review' }">
+							<span>${board.bStar }</span>						
+						</c:if>
 					</div>
 				</div>
 				<div class="attach">
@@ -54,10 +57,10 @@
 					</div>
 				</div>
 				<div class="board_crud">
-					<a href="/board/reviewList.do?curPage=${curPage}" class="b_btn_white">목록</a>
+					<a href="boardList.do?curPage=${curPage}" class="b_btn_white">목록</a>
 					<c:if test='${userId eq "admin" || board.userId eq userId }'>
-						<a href="/board/reviewUpdateForm.do?curPage=${curPage}&bNum=${board.bNum}" class="b_btn_white">수정</a>
-						<a href="/board/reviewDelete.do?curPage=${curPage}&bNum=${board.bNum}" class="b_btn_white">삭제</a>
+						<a href="boardUpdateForm.do?curPage=${curPage}&bNum=${board.bNum}" class="b_btn_white">수정</a>
+						<a href="boardDelete.do?curPage=${curPage}&bNum=${board.bNum}" class="b_btn_white">삭제</a>
 					</c:if>
 				</div>
 
@@ -67,7 +70,7 @@
 							<span> 이전 <i class="icon icoArrowTop"></i>
 							</span>
 							<p>
-								<a href="/board/reviewContent.do?bNum=${preBoard.bNum}&curPage=${curPage}">${preBoard.bSubject }</a>
+								<a href="boardContent.do?bNum=${preBoard.bNum}&curPage=${curPage}">${preBoard.bSubject }</a>
 							</p>
 						</div>
 					</c:if>
@@ -76,7 +79,7 @@
 							<span> 다음 <i class="icon icoArrowBottom"></i>
 							</span>
 							<p>
-								<a href="/board/reviewContent.do?bNum=${afterBoard.bNum}&curPage=${curPage}">${afterBoard.bSubject }</a>
+								<a href="boardContent.do?bNum=${afterBoard.bNum}&curPage=${curPage}">${afterBoard.bSubject }</a>
 							</p>
 						</div>
 					</c:if>

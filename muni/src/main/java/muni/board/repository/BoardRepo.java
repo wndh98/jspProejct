@@ -5,7 +5,7 @@ import java.util.List;
 import muni.board.dto.BoardDto;
 import muni.paging.Pagination;
 
-public interface BoardRVRepo {
+public interface BoardRepo {
 	List<BoardDto> selectList(Pagination pagination);
 
 	int insert(BoardDto boardDto);

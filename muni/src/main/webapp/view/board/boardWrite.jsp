@@ -16,13 +16,13 @@
 <body>
 	<c:if test="${result > 0 }">
 		<script type="text/javascript">
-			alert("상품 사용후기가 작성되었습니다");
-			location.href = "/board/reviewList.do"
+			alert("작성되었습니다");
+			location.href = "boardList.do"
 		</script>
 	</c:if>
 	<c:if test="${result == 0 }">
 		<script type="text/javascript">
-			alert("상품 사용후기 작성에 실패했습니다");
+			alert("작성에 실패했습니다");
 			location.href = history.back();
 		</script>
 	</c:if>

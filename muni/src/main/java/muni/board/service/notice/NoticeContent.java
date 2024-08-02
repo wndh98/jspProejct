@@ -1,14 +1,14 @@
-package muni.board.service;
+package muni.board.service.notice;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import muni.board.dto.BoardDto;
-import muni.board.repository.BoardRVRepo;
-import muni.board.repository.BoardRVRepoImpl;
+import muni.board.repository.BoardRepo;
+import muni.board.repository.NoticeRepoImpl;
 import muni.controller.CommandProcess;
 
-public class ReviewContent implements CommandProcess {
+public class NoticeContent implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -20,7 +20,7 @@ public class ReviewContent implements CommandProcess {
 		}
 		request.setAttribute("curPage", curPage);
 		int bNum = Integer.parseInt(request.getParameter("bNum"));
-		BoardRVRepo brvr = new BoardRVRepoImpl();
+		BoardRepo brvr = new NoticeRepoImpl();
 		brvr.updateCount(bNum);
 		BoardDto board = brvr.select(bNum);
 		BoardDto preBoard = brvr.select(bNum+1);
@@ -28,8 +28,8 @@ public class ReviewContent implements CommandProcess {
 		request.setAttribute("board", board);
 		request.setAttribute("preBoard", preBoard);
 		request.setAttribute("afterBoard", afterBoard);
-
-		return "/view/board/contentRV.jsp";
+		request.setAttribute("title", "공지사항");
+		return "/view/board/boardContent.jsp";
 	}
 
 }

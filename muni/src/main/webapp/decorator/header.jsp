@@ -107,41 +107,30 @@
 							<div class="menuBox_top">
 								<div class="top_category">
 									<ul>
-										<li class="ctg"><a href="https://munigrabby.com/category/Woman/23/">Woman</a>
-											<ul class="sub_cate01">
-
-												<li class="top"><a href="https://munigrabby.com/category/Top/24/">Top</a>
-													<ul class="sub_cate02">
-														<li class="noChild"><a href="/category/Short-Sleeve/51/">Short Sleeve</a></li>
-														<li class="noChild"><a href="/category/Long-Sleeve/52/">Long Sleeve</a></li>
+										<c:forEach items="${cateList }" var="category">
+											<c:if test="${category.pcId.length()==2}">
+												<li class="ctg"><a
+													href="/product/piList.do?pcId=${category.pcId}">${category.pcName}</a>
+													<ul class="sub_cate01">
+														<c:forEach items="${cateList }" var="category2">
+															<c:if
+																test="${category2.pcId.length()==4 && category2.pcId.startsWith(category.pcId)}">
+																<li class="top"><a
+																	href="/product/piList.do?pcId=${category2.pcId}">${category2.pcName }</a>
+																	<ul class="sub_cate02">
+																		<c:forEach items="${cateList }" var="category3">
+																			<c:if
+																				test="${category3.pcId.length()==6 && category3.pcId.startsWith(category2.pcId)}">
+																				<li class="noChild"><a
+																					href="/product/piList.do?pcId=${category3.pcId}">${category3.pcName }</a></li>
+																			</c:if>
+																		</c:forEach>
+																	</ul></li>
+															</c:if>
+														</c:forEach>
 													</ul></li>
-
-												<li class="Bottom"><a href="/category/Bottom/46/">Bottom</a>
-													<ul class="sub_cate02">
-														<li class="noChild1"><a href="/category/Skirt/49/">Skirt</a></li>
-														<li class="noChild"><a href="/category/Pants/50/">Pants</a></li>
-													</ul></li>
-											</ul></li>
-
-
-										<li class="ctg2"><a href="/category/Man/25/">Man</a>
-											<ul class="sub_cate01">
-												<li class=""><a href="/category/Top/32/">Top</a>
-													<ul class="sub_cate02">
-														<li class="noChild3"><a href="/category/(%EC%86%8C%EB%B6%84%EB%A5%98)-Short-Sleeve/36/">Short Sleeve</a></li>
-														<li class="noChild4"><a href="/category/(%EC%86%8C%EB%B6%84%EB%A5%98)-Long-Sleeve/37/">Long Sleeve</a></li>
-													</ul></li>
-												<li class=""><a href="/category/Bottom/33/">Bottom</a></li>
-											</ul></li>
-
-
-										<li class=""><a href="/category/Kids/26/">Kids</a></li>
-
-
-										<li class=""><a href="/category/Accessories/28/">Accessories</a></li>
-
-										</li>
-
+											</c:if>
+										</c:forEach>
 									</ul>
 								</div>
 							</div>

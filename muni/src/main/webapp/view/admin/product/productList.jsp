@@ -52,31 +52,6 @@
 					</table>
 				</div>
 			</div>
-			<div class="paging">
-				<c:if test="${pagination.curPage ne 1 }">
-					<a class="prev_btn"
-						href="/admin/product/piList.do?curPage=${pagination.prevPage}"></a>
-				</c:if>
-				<ul class="page_list">
-					<c:forEach var="pageNum" begin="${pagination.startPage }"
-						end="${pagination.endPage }">
-						<c:choose>
-							<c:when test="${pageNum eq  pagination.curPage}">
-								<li><a class="on"
-									href="/admin/product/piList.do?curPage=${pageNum}">${pageNum }</a></li>
-							</c:when>
-							<c:otherwise>
-								<li><a href="/admin/product/piList.do?curPage=${pageNum}">${pageNum}</a></li>
-							</c:otherwise>
-						</c:choose>
-					</c:forEach>
-				</ul>
-				<c:if
-					test="${pagination.curPage ne pagination.pageCnt && pagination.pageCnt > 0}">
-					<a class="next_btn"
-						href="/admin/product/piList.do?curPage=${pagination.nextPage }"></a>
-				</c:if>
-			</div>
 		</div>
 	</div>
 	<script src="/js/admin/product/product.js"></script>

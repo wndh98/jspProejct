@@ -15,3 +15,10 @@ window.onload = function () {
         });
     });
 };
+
+const button = document.getElementsByClassName("btnMore")[0];
+
+                                       button.addEventListener("click", function () {
+                                           document.getElementsByClassName("prdList grid3")[0].classList.toggle("on");
+
+                                       });

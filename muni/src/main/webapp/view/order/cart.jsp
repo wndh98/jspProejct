@@ -43,7 +43,7 @@
 							<h4>일반상품(2)</h4>
 							<div class="cartContent">
 
-								<c:forEach var="proCate" items="${list}" varStatus="vs">
+								<c:forEach var="product" items="${list}" varStatus="vs">
 
 									<input type="checkbox">
 									<div class="thumbnail">
@@ -53,12 +53,12 @@
 									</div>
 									<div class="info">
 										<ul>
-											<li>CH Label Jogger Training Pants [Free]</li>
-											<li>21,500원</li>
+											<li>${product.piName }</li>
+											<li>"${product.piPrice}"원</li>
 											<li><span class="red">-0</span>원</li>
-											<li class="gray">배송 : [무료] / 기본배송</li>
+											<li class="gray">배송 : ${product.piDelivery} / 기본배송</li>
 											<li class="gray"><img
-												src="/images/product/ico_product_point.gif"> 650원</li>
+												src="/upload/product/${product.piFile1}"> 650원</li>
 										</ul>
 									</div>
 
@@ -114,6 +114,32 @@
 						<button class="btnNormal_w">전체선택</button>
 						<button class="btnNormal_w">선택삭제</button>
 					</div>
+				</div>
+
+				<div class="paging">
+					<c:if test="${pagination.curPage ne 1 }">
+						<a class="prev_btn"
+							href="/aproduct/piList.do?curPage=${pagination.prevPage}"></a>
+					</c:if>
+					<ul class="page_list">
+						<c:forEach var="pageNum" begin="${pagination.startPage}"
+							end="${pagination.endPage }">
+							<c:choose>
+								<c:when test="${pageNum eq pagination.curPage}">
+									<li><a class="on"
+										href="/product/piList.do?curPage=${pageNum}">${pageNum }</a></li>
+								</c:when>
+								<c:otherwise>
+									<li><a href="/product/piList.do?curPage=${pageNum}">${pageNum}</a></li>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+					</ul>
+					<c:if
+						test="${pagination.curPage ne pagination.pageCnt && pagination.pageCnt > 0}">
+						<a class="next_btn"
+							href="/product/piList.do?curPage=${pagination.nextPage }"></a>
+					</c:if>
 				</div>
 			</form>
 		</div>

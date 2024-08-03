@@ -82,15 +82,15 @@
 							<span>TOTAL</span>(QUANTITY)
 						</div>
 						<div class="price_info">
-							<span id="price">0원</span><span id="count">(0개)</span>
+							<span id="piPrice">${piPrice} 원</span><span id="piCount">(${piCount}개)</span>
 						</div>
 					</div>
 					<div class="product_button">
-						<button class="btn_black" type="button"
+						<button class="btn_black" type="submit"
 							onclick="location.href='/order/orderForm.do'">BUY IT NOW</button>
-						<button class="btn_white" type="button"
+						<button class="btn_white" type="submit"
 							onclick="location.href='/order/orderCart.do'">CART</button>
-						<button class="btn_white" type="button"
+						<button class="btn_white" type="submit"
 							onclick="location.href='/order/wishList.do'">WISH LIST</button>
 					</div>
 				</form>

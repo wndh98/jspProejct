@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="kr">
 
@@ -14,83 +14,62 @@
 	<div id="container">
 		<div class="breadcrumbs">
 			<ul>
-				<li><a href="#none">홈</a></li>
+				<li><a href="/main.do">홈</a></li>
 				<li><a href="#none">게시판</a></li>
-				<li><a href="#none">상품 사용후기</a></li>
+				<li><a href="boardList.do">${title}</a></li>
 			</ul>
 		</div>
 		<div class="board_container">
-			<h1 class="title1">상품 사용후기</h1>
-			<h2 class="title2">상품 사용후기입니다.</h2>
+			<h1 class="title1">${title}</h1>
+			<h2 class="title2">${title}입니다.</h2>
 			<div class="board_list">
 				<table class="board_table">
 					<colgroup>
 						<col style="width: 80px;">
-						<col style="width: 85px;">
+						<%-- <col style="width: 85px;"> --%>
 						<col style="width: auto;">
 						<col style="width: 85px;">
 						<col style="width: 120px;">
 						<col style="width: 55px;">
-						<col style="width: 80px;">
+						<c:if test="${boardType eq 'review' }">
+							<col style="width: 80px;">
+						</c:if>
 					</colgroup>
-					<thead>
-						<tr>
-							<th>번호</th>
-							<th>상품정보</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>작성일</th>
-							<th>조회</th>
+					<tr>
+						<th>번호</th>
+						<!-- <th>상품정보</th> -->
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
+						<th>조회</th>
+						<c:if test="${boardType eq 'review' }">
 							<th>평점</th>
+						</c:if>
+					</tr>
+					<c:if test="${empty list }">
+						<tr>
+							<th colspan="7">게시글이 없습니다</th>
 						</tr>
-					</thead>
-					<tr>
-						<td>19</td>
-						<td><img src="/images/6de767f8667c32d13761c505f8681e65.jpg"
-							alt="dog"></td>
-						<td>
-							<p class="prd_title">shiba</p> <a href="#none">정말 귀여워요~~~</a>
-						</td>
-						<td class="b_writer">박****</td>
-						<td class="b_date">2024-07-15<br>12:01:24
-						</td>
-						<td class="b_view">9</td>
-						<td class="b_rating"><img
-							src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating5.svg"
-							alt="5점"></td>
-					</tr>
-					<tr>
-						<td>18</td>
-						<td><img src="/images/6de767f8667c32d13761c505f8681e65.jpg"
-							alt="dog"></td>
-						<td>
-							<p class="prd_title">shiba</p> <a href="#none">맞을래요?</a>
-						</td>
-						<td class="b_writer">오****</td>
-						<td class="b_date">2024-07-09<br>18:18:18
-						</td>
-						<td class="b_view">18</td>
-						<td class="b_rating"><img
-							src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating5.svg"
-							alt="5점"></td>
-					</tr>
-					<tr>
-						<td>17</td>
-						<td><img src="/images/6de767f8667c32d13761c505f8681e65.jpg"
-							alt="dog"></td>
-						<td>
-							<p class="prd_title">shiba</p> <a href="#none">상품 오자마자 쓰는 후기</a>
-						</td>
-						<td class="b_writer">민****</td>
-						<td class="b_date">2024-07-06<br>09:18:11
-						</td>
-						<td class="b_view">21</td>
-						<td class="b_rating"><img
-							src="//img.echosting.cafe24.com/skin/skin/board/icon-star-rating5.svg"
-							alt="5점"></td>
-					</tr>
+					</c:if>
+					<c:if test="${not empty list }">
+						<c:forEach var="board" items="${list }">
+							<tr>
+								<td>${board.bNum}</td>
+								<td>
+									<a href="boardContent.do?bNum=${board.bNum}&curPage=${curPage}">${board.bSubject }</a>
+								</td>
+								<td>${board.bWriter }</td>
+								<td>${board.bDate }</td>
+								<td>${board.bCount }</td>
+								<c:if test="${boardType eq 'review' }">
+									<td>${board.bStar }</td>
+								</c:if>
+							</tr>
+						</c:forEach>
+					</c:if>
+
 				</table>
-				<div class="board_menu">
+				<!-- 				<div class="board_menu">
 					<div class="search_form">
 						<form>
 							<select>
@@ -105,26 +84,48 @@
 								<option value="">아이디</option>
 								<option value="">별명</option>
 								<option value="">상품정보</option>
-							</select> <input type="text"> <input type="submit"
-								class="btnNormal">
+							</select>
+							<input type="text">
+							<input type="submit" class="btnNormal">
 						</form>
-					</div>
-					<div class="board_crud">
-						<a class="btnNormal">글쓰기</a>
-					</div>
-				</div>
-				<div class="paging">
-					<a class="prev_btn"></a>
-					<ul class="page_list">
-						<li><a class="on" href="#none">1</a></li>
-						<li><a href="#none">2</a></li>
-						<li><a href="#none">3</a></li>
-						<li><a href="#none">4</a></li>
-					</ul>
-					<a class="next_btn"></a>
-				</div>
+					</div> -->
+				<c:if test="${boardType eq 'notice'}">
+					<c:if test="${userId eq 'admin'}">
+						<div class="board_crud">
+							<a href="boardWriteForm.do?curPage=${curPage }" class="btnNormal">글쓰기</a>
+						</div>
+					</c:if>
+				</c:if>
+				<c:if test="${boardType ne 'notice'}">
+					<c:if test="${userId ne null}">
+						<div class="board_crud">
+							<a href="boardWriteForm.do?curPage=${curPage }" class="btnNormal">글쓰기</a>
+						</div>
+					</c:if>
+				</c:if>
+			</div>
+			<div class="paging">
+				<c:if test="${pagination.curPage ne 1 }">
+					<a class="prev_btn" href="boardList.do?curPage=${pagination.prevPage}"></a>
+				</c:if>
+				<ul class="page_list">
+					<c:forEach var="pageNum" begin="${pagination.startPage }" end="${pagination.endPage }">
+						<c:choose>
+							<c:when test="${pageNum eq  pagination.curPage}">
+								<li><a class="on" href="boardList.do?curPage=${pageNum}">${pageNum }</a></li>
+							</c:when>
+							<c:otherwise>
+								<li><a href="boardList.do?curPage=${pageNum}">${pageNum}</a></li>
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+				</ul>
+				<c:if test="${pagination.curPage ne pagination.pageCnt && pagination.pageCnt > 0}">
+					<a class="next_btn" href="boardList.do?curPage=${pagination.nextPage }"></a>
+				</c:if>
 			</div>
 		</div>
+	</div>
 	</div>
 
 </body>

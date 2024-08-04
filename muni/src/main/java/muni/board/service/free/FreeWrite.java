@@ -42,7 +42,6 @@ public class FreeWrite implements CommandProcess {
 //			board.setbStar(bStar);
 			// Dao에 데이터 입력 요청
 			BoardRepo brvr = new FreeRepoImpl();
-			System.out.println(board);
 			result = brvr.insert(board);
 			// 결과를 jsp에 전달하기
 		}

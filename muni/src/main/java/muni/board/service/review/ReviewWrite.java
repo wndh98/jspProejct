@@ -30,6 +30,7 @@ public class ReviewWrite implements CommandProcess {
 			String bSubject = request.getParameter("bSubject");
 			String bContent = request.getParameter("bContent");
 			int bStar = Integer.parseInt(request.getParameter("bStar"));
+			int piNum=Integer.parseInt(request.getParameter("piNum"));
 			
 			
 			// DTO에 데이터 채우기
@@ -40,9 +41,9 @@ public class ReviewWrite implements CommandProcess {
 			board.setbSubject(bSubject);
 			board.setbContent(bContent);
 			board.setbStar(bStar);
+			board.setPiNum(piNum);
 			// Dao에 데이터 입력 요청
 			BoardRepo brvr = new BoardRVRepoImpl();
-			System.out.println(board);
 			result = brvr.insert(board);
 			// 결과를 jsp에 전달하기
 		}

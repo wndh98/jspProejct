@@ -7,11 +7,14 @@
 		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
 	<typeAliases>
-    <typeAlias alias="board" type="muni.board.dto.BoardDto" />
+		<typeAlias alias="userWish" type="muni.order.dto.UserWishDto" />
+		<typeAlias alias="board" type="muni.board.dto.BoardDto" />
 		<typeAlias alias="deli" type="muni.user.dto.UserDeliveryDto" />
 		<typeAlias alias="user" type="muni.user.dto.UserDto" />
-		<typeAlias alias="ProductCate" type="muni.product.dto.ProductCateDto" />
-		<typeAlias alias="ProductItem" type="muni.product.dto.ProductItemDto" />
+		<typeAlias alias="ProductCate"
+			type="muni.product.dto.ProductCateDto" />
+		<typeAlias alias="ProductItem"
+			type="muni.product.dto.ProductItemDto" />
 		<typeAlias alias="pagination" type="muni.paging.Pagination" />
 		<!-- <typeAlias alias="member" type="ch16.model.Member" /> -->
 	</typeAliases>
@@ -27,12 +30,13 @@
 		</environment>
 	</environments>
 	<mappers>
-    <mapper resource="muni/board/sql/review.xml" />
-    <mapper resource="muni/board/sql/notice.xml" />
-    <mapper resource="muni/board/sql/free.xml" />
+		<mapper resource="muni/order/sql/userWish.xml" />
+		<mapper resource="muni/board/sql/review.xml" />
+		<mapper resource="muni/board/sql/notice.xml" />
+		<mapper resource="muni/board/sql/free.xml" />
 		<mapper resource="muni/user/sql/userSql.xml" />
 		<mapper resource="muni/user/sql/userDeli.xml" />
-		<mapper resource="muni/product/sql/product.xml"/>
+		<mapper resource="muni/product/sql/product.xml" />
 		<!-- <mapper resource="member.xml" /> -->
 	</mappers>
 </configuration>

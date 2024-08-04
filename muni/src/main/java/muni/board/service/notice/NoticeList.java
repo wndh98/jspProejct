@@ -22,7 +22,7 @@ public class NoticeList implements CommandProcess {
 			curPage = Integer.parseInt(pcurPage);
 		}
 		request.setAttribute("curPage", curPage);
-		int listCnt = brvr.findByAllCnt();
+		int listCnt = brvr.findByAllCnt(0);
 		
 		Pagination pagination = new Pagination(curPage,listCnt);
 		

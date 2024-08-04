@@ -1,6 +1,7 @@
 package muni.board.repository;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -42,9 +43,9 @@ public class NoticeRepoImpl implements BoardRepo{
 	}
 
 	@Override
-	public int findByAllCnt() {
+	public int findByAllCnt(int piNum) {
 		SqlSession ss = MybatisSqlSessionFactory.getSqlSession(true);
-		int result = ss.selectOne("noticens.findByAllCnt");
+		int result = ss.selectOne("noticens.findByAllCnt",piNum);
 		ss.close();
 		return result;
 	}
@@ -63,6 +64,12 @@ public class NoticeRepoImpl implements BoardRepo{
 		ss.update("noticens.updateCount",bNum);
 		ss.close();
 		
+	}
+
+	@Override
+	public List<BoardDto> selectList(Map<String, Integer> map) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

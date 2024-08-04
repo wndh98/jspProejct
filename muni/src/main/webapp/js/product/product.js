@@ -33,6 +33,25 @@ $(window).on("load", function() {
 		$("input[name=po_price]").val($(this).attr("price"));
 		$(".info .price").html($("input[name=po_price]").val() * $("input[name=pi_count]").val() + "원");
 	});
-
+	$("#piCount").on("change",function(){
+		if($(this).val()<=0)$(this).val("1");
+		else if($(this).val()>$("input[name='maxCount']").val()*1)$(this).val($("input[name='maxCount']").val());
+		let piPrice=$("input[name='eprice']").val();
+		let piDelivery = $("input[name='piDelivery']").val();
+		let totalPrice = $(this).val() * piPrice;
+		$("#sPrice").html(totalPrice.toLocaleString('ko-KR')+"원");
+		totalPrice+=piDelivery*1;
+		$("#price").html(totalPrice.toLocaleString('ko-KR')+"원");
+		$("#count").html("("+$(this).val()+"개)");
+	})
+	$(".increase").on("click",function(){
+		let piCount = $("input[name='piCount']").val()*1;
+		if($(this).val()=="+"){
+			$("input[name='piCount']").val(piCount+1);
+			$("#piCount").change();
+		}else{
+			$("input[name='piCount']").val(piCount-1);
+			$("#piCount").change();
+		}
+	});
 });
-

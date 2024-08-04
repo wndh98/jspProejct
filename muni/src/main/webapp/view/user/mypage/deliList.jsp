@@ -108,14 +108,8 @@
 					<ul class="menu">
 						<li><a href="/user/mypage/orderList.do">주문내역 조회</a></li>
 						<li><a href="/myshop/mileage/historyList.html">적립금 내역</a></li>
-						<!-- <li class="displaynone">
-                                <a href="/myshop/deposits/historyList.html">예치금 내역</a>
-                            </li> -->
 						<li class=""><a href="/myshop/coupon/coupon.html">쿠폰 내역</a></li>
 						<li><a href="/user/mypage/deliList.do">배송 주소록 관리</a></li>
-						<!-- <li class="">
-            <a href="/myshop/regular_delivery.html">정기배송 관리</a>
-        </li> -->
 					</ul>
 					<div class="subTitle">
 						<h3>활동 정보</h3>

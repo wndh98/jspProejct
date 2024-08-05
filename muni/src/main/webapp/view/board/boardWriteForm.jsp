@@ -34,7 +34,7 @@
 			<h1 class="title1">${title}</h1>
 			<div class="board_content">
 				<form action="boardWrite.do" method="post">
-					<input type="hidden" name="piNum" value="">
+					<input type="hidden" name="piNum" value="${piNum}">
 					<table class="boardForm">
 						<colgroup>
 							<col style="width: 190px;">

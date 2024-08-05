@@ -75,7 +75,7 @@ public class ProductUpdate implements CommandProcess {
 				File dfile2 = new File(realPath + "/" + ofile2);
 				if (dfile2.exists())
 					dfile2.delete();
-				pid.setPiFile2(file1.getName());
+				pid.setPiFile2(file2.getName());
 			}
 			String ofile3 = oldProduct.getPiFile3();
 			File file3 = multi.getFile("piFile3");

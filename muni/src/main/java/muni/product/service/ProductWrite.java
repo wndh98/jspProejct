@@ -30,6 +30,7 @@ public class ProductWrite implements CommandProcess {
 			MultipartRequest multi = new MultipartRequest(request, realPath, fileSize, encType,
 					new DefaultFileRenamePolicy());
 			
+			
 			File file1=multi.getFile("piFile1");
 			if(file1!=null)
 			pid.setPiFile1(file1.getName());

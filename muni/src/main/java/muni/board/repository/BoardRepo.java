@@ -1,6 +1,7 @@
 package muni.board.repository;
 
 import java.util.List;
+import java.util.Map;
 
 import muni.board.dto.BoardDto;
 import muni.paging.Pagination;
@@ -14,10 +15,11 @@ public interface BoardRepo {
 
 	int update(BoardDto board);
 
-	int findByAllCnt();
+	int findByAllCnt(int piNum);
 
 	int delete(int bNum);
 
 	void updateCount(int bNum);
 
+	List<BoardDto> selectList(Map<String,Integer> map);
 }

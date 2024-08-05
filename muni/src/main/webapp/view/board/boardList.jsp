@@ -69,26 +69,6 @@
 					</c:if>
 
 				</table>
-				<!-- 				<div class="board_menu">
-					<div class="search_form">
-						<form>
-							<select>
-								<option value="">일주일</option>
-								<option value="">한달</option>
-								<option value="">세달</option>
-								<option value="">전체</option>
-							</select> <select>
-								<option value="">제목</option>
-								<option value="">내용</option>
-								<option value="">글쓴이</option>
-								<option value="">아이디</option>
-								<option value="">별명</option>
-								<option value="">상품정보</option>
-							</select>
-							<input type="text">
-							<input type="submit" class="btnNormal">
-						</form>
-					</div> -->
 				<c:if test="${boardType eq 'notice'}">
 					<c:if test="${userId eq 'admin'}">
 						<div class="board_crud">

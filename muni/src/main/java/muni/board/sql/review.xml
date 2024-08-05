@@ -15,9 +15,18 @@
 		<id property="bDate" column="B_DATE" />
 	</resultMap>
 
-	<select id="selectList" resultMap="boardResultMap" parameterType="pagination">
-		select * from BOARD_REVIEW order by B_NUM DESC offset #{startIndex} rows fetch next #{pageSize} rows only
+	<select id="selectList" resultMap="boardResultMap"
+		parameterType="pagination">
+		select * from BOARD_REVIEW order by B_NUM DESC offset
+		#{startIndex} rows fetch next #{pageSize} rows only
 	</select>
+	<select id="selectProductList" resultMap="boardResultMap"
+		parameterType="hashMap">
+		select * from BOARD_REVIEW where PI_NUM=#{piNum} order
+		by B_NUM DESC offset #{startIndex} rows fetch next #{pageSize} rows
+		only
+	</select>
+
 	<insert id="insert" parameterType="board">
 		insert into BOARD_REVIEW(
 		PI_NUM,
@@ -45,21 +54,28 @@
 		sysdate
 		)
 	</insert>
-	<select id="select" parameterType="int" resultMap="boardResultMap">
+	<select id="select" parameterType="int"
+		resultMap="boardResultMap">
 		select * from BOARD_REVIEW
 		where B_NUM=#{bNum}
 	</select>
-	<select id="findByAllCnt" resultType="int">
+	<select id="findByAllCnt" resultType="int" parameterType="int">
 		select count(*) from BOARD_REVIEW
+		<if test="piNum != null and piNum != 0">
+			where PI_NUM=#{piNum}
+		</if>
 	</select>
 	<update id="update" parameterType="board">
 		update BOARD_REVIEW set
-		B_SUBJECT=#{bSubject}, B_CONTENT=#{bContent}, B_STAR=#{bStar} where B_NUM=#{bNum}
+		B_SUBJECT=#{bSubject}, B_CONTENT=#{bContent}, B_STAR=#{bStar} where
+		B_NUM=#{bNum}
 	</update>
 	<update id="updateCount" parameterType="int">
-		update BOARD_REVIEW set B_COUNT = B_COUNT+1 where B_NUM=#{bNum}
+		update BOARD_REVIEW set
+		B_COUNT = B_COUNT+1 where B_NUM=#{bNum}
 	</update>
 	<delete id="delete" parameterType="int">
-		delete from BOARD_REVIEW where B_Num=#{bNum}
+		delete from BOARD_REVIEW where
+		B_Num=#{bNum}
 	</delete>
 </mapper>

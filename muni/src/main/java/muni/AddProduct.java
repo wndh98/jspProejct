@@ -1,4 +1,4 @@
-package muni.order.service;
+package muni;
 
 import java.util.List;
 
@@ -11,25 +11,26 @@ import muni.product.dto.ProductItemDto;
 import muni.product.repository.ProductItemRepo;
 import muni.product.repository.ProductItemRepoImpl;
 
-public class OrderCartForm implements CommandProcess {
-
+public class AddProduct implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		ProductItemRepo pir = new ProductItemRepoImpl();
 		int curPage = 1;
 		String pcurPage = request.getParameter("curPage");
-		if (pcurPage != null && pcurPage.equals("")) {
+		
+		if (pcurPage != null && !pcurPage.equals("")) {
 			curPage = Integer.parseInt(pcurPage);
 		}
 		int cnt = pir.findByAllCnt();
-
 		Pagination pagination = new Pagination(curPage, cnt);
+		pagination.setPageSize(4);
+		pagination.reSetting(curPage, cnt);
 		List<ProductItemDto> list = pir.selectList(pagination);
-
 		request.setAttribute("list", list);
+		
 		request.setAttribute("pagination", pagination);
 		request.setAttribute("curPage", curPage);
-		return "/view/order/cart.jsp";
 
+		return "/view/main/addProduct.jsp";
 	}
 }

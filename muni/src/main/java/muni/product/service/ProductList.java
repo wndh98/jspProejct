@@ -18,7 +18,7 @@ public class ProductList implements CommandProcess {
 		ProductItemRepo pir = new ProductItemRepoImpl();
 		int curPage = 1;
 		String pcurPage = request.getParameter("curPage");
-		if (pcurPage != null && pcurPage.equals("")) {
+		if (pcurPage != null && !pcurPage.equals("")) {
 			curPage = Integer.parseInt(pcurPage);
 		}
 		int cnt = pir.findByAllCnt();

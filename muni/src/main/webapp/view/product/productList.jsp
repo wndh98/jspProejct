@@ -39,10 +39,10 @@
 						</div>
 					</div>
 					<div class="product_list">
-						<c:forEach items="${list}" var="product">
 							<!-- 상품번호 -->
 							<div class="ec-base-product">
 								<ul class="prdList grid4">
+									<c:forEach items="${list}" var="product">
 									<li>
 										<div class="prdList__item">
 											<div class="thumbnail">
@@ -85,6 +85,7 @@
 											</div>
 										</div>
 									</li>
+									</c:forEach>
 								</ul>
 							</div>
 							<%-- 	<tr>
@@ -93,7 +94,7 @@
 								<td>${product.piCprice}</td>
 								<td>${product.piCount}</td>
 							</tr> --%>
-						</c:forEach>
+						
 					</div>
 				</div>
 			</div>

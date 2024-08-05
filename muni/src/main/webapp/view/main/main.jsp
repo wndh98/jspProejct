@@ -46,7 +46,7 @@
 					<div class="ec-base-product">
 
 						<!-- 상품 리스트 추후 수정 -->
-						<ul class="prdList grid3">
+						<ul class="prdList grid3" id="addItemTarget">
 							<c:forEach items="${list }" var="product" end="3">
 								<li id="product_111" style="width: 50%;">
 									<!-- 상품번호 -->
@@ -100,64 +100,12 @@
 				</div>
 
 				<div class="more">
-					<a href="#none"
-						onclick="try { $M.displayMore(2, 3, 0, 15, 0, true, 'S0000000', false, ''); } catch(e) { return false; }"
-						class="btnMore"> 상품 더보기
+					<a href="#none" class="btnMore" id="btnMore"> 상품 더보기
 						<div>
 							(<span id="more_current_page_3" class="">1</span>/<span
 								id="more_total_page_3" class="">4</span>)
 						</div>
 					</a>
-					<ul class="prdList grid3 on">
-						<c:forEach items="${list }" var="product" end="3">
-							<li id="product_111" style="width: 50%;">
-								<!-- 상품번호 -->
-								<div class="prdList__item">
-									<div class="thumbnail">
-										<!-- 상품 썸네일 -->
-										<a href="#"> <!-- 썸네일 이미지 --> <img
-											src="/upload/product/${product.piFile1}">
-										</a>
-										<div class="icon__box">
-											<!-- 아이콘 박스 -->
-											<span class="wish"><img
-												src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
-												class="wish" alt="관심상품 등록 전" productno="111" categoryno="1"
-												icon_status="off" login_status="F" individual-set="F">WISH</span>
-											<span class="cart"><img
-												src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
-												onclick="category_add_basket('111','1', '3', 'A0000', false, '1', 'P00000EI', 'A', 'F', '0');"
-												alt="장바구니 담기" class="cart">CART</span>
-										</div>
-										<div class="dim">
-											<a href="#"></a>
-										</div>
-										<div class="sale_box">50%</div>
-									</div>
-									<div class="description">
-										<!-- 상품명, 가격 -->
-										<div class="name">
-											<a href="#"> <span
-												style="font-size: 12px; color: #555555;">${product.piName}</span>
-											</a>
-										</div>
-										<ul class="spec">
-											<li><span
-												style="font-size: 12px; color: #555555; text-decoration: line-through;">${product.piCprice}
-											</span></li>
-											<li><span
-												style="font-size: 12px; color: #e00404; font-weight: bold;">${product.piSail}</span>
-											</li>
-										</ul>
-										<div class="icon">
-											<img src="/images/product/hit.gif" alt=""> <img
-												src="/images/product/sale.gif" alt="">
-										</div>
-									</div>
-								</div>
-							</li>
-						</c:forEach>
-					</ul>
 				</div>
 			</section>
 			<section id="section_main_video"
@@ -310,31 +258,6 @@
 					</div>
 				</div>
 			</section>
-			<div class="paging">
-				<c:if test="${pagination.curPage ne 1 }">
-					<a class="prev_btn"
-						href="/aproduct/piList.do?curPage=${pagination.prevPage}"></a>
-				</c:if>
-				<ul class="page_list">
-					<c:forEach var="pageNum" begin="${pagination.startPage}"
-						end="${pagination.endPage }">
-						<c:choose>
-							<c:when test="${pageNum eq pagination.curPage}">
-								<li><a class="on"
-									href="/product/piList.do?curPage=${pageNum}">${pageNum }</a></li>
-							</c:when>
-							<c:otherwise>
-								<li><a href="/product/piList.do?curPage=${pageNum}">${pageNum}</a></li>
-							</c:otherwise>
-						</c:choose>
-					</c:forEach>
-				</ul>
-				<c:if
-					test="${pagination.curPage ne pagination.pageCnt && pagination.pageCnt > 0}">
-					<a class="next_btn"
-						href="/product/piList.do?curPage=${pagination.nextPage }"></a>
-				</c:if>
-			</div>
 		</div>
 	</div>
 	<script src="/js/main.js"></script>

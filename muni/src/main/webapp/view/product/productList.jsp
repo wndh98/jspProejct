@@ -59,7 +59,7 @@
 														class="cart">CART</span>
 												</div>
 												<div class="dim">
-													<a href="#"></a>
+													<a href="/product/piView.do?piNum=${product.piNum}"></a>
 												</div>
 												<div class="sale_box">50%</div>
 											</div>

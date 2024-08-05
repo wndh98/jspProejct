@@ -1,31 +1,29 @@
-package muni.board.service;
+package muni.board.service.free;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import muni.board.dto.BoardDto;
-import muni.board.repository.BoardRVRepo;
-import muni.board.repository.BoardRVRepoImpl;
+import muni.board.repository.BoardRepo;
+import muni.board.repository.FreeRepoImpl;
 import muni.controller.CommandProcess;
 
-public class ReviewUpdateForm implements CommandProcess {
-
+public class FreeDelete implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
+		BoardRepo brr = new FreeRepoImpl();
 		int curPage=1;
 		String pcurPage=request.getParameter("curPage");
 		if(pcurPage!=null && !pcurPage.equals("")) {
 			curPage = Integer.parseInt(pcurPage);
 		}
+		request.setAttribute("curPage", curPage);
 		int bNum=0;
 		if(!request.getParameter("bNum").equals("") && request.getParameter("bNum")!=null) {
 			bNum=Integer.parseInt(request.getParameter("bNum"));
 		}
-		BoardRVRepo brr = new BoardRVRepoImpl();
-		BoardDto board = brr.select(bNum);
-		request.setAttribute("board", board);
-		request.setAttribute("curPage", curPage);
-		return "/view/board/updateRVForm.jsp";
+		int result =0;
+		result = brr.delete(bNum);
+		request.setAttribute("result", result);
+		return "/view/board/boardDelete.jsp";
 	}
-
 }

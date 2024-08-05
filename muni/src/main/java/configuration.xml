@@ -28,6 +28,8 @@
 	</environments>
 	<mappers>
     <mapper resource="muni/board/sql/review.xml" />
+    <mapper resource="muni/board/sql/notice.xml" />
+    <mapper resource="muni/board/sql/free.xml" />
 		<mapper resource="muni/user/sql/userSql.xml" />
 		<mapper resource="muni/user/sql/userDeli.xml" />
 		<mapper resource="muni/product/sql/product.xml"/>

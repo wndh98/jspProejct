@@ -42,13 +42,12 @@
 						<div class="cartList">
 							<h4>일반상품(2)</h4>
 							<div class="cartContent">
-
 								<c:forEach var="product" items="${list}" varStatus="vs">
 
 									<input type="checkbox">
 									<div class="thumbnail">
 										<img
-											src="/images/product/b30b39630c23c4875f9f10972842e634.png"
+											src="/upload/product/${product.piFile1}"
 											alt="">
 									</div>
 									<div class="info">
@@ -57,8 +56,7 @@
 											<li>"${product.piPrice}"원</li>
 											<li><span class="red">-0</span>원</li>
 											<li class="gray">배송 : ${product.piDelivery} / 기본배송</li>
-											<li class="gray"><img
-												src="/upload/product/${product.piFile1}"> 650원</li>
+
 										</ul>
 									</div>
 

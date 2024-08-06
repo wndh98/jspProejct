@@ -7,6 +7,7 @@
 		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
 	<typeAliases>
+		<typeAlias alias="orderCart" type="muni.order.dto.OrderCartDto" />
 		<typeAlias alias="userWish" type="muni.order.dto.UserWishDto" />
 		<typeAlias alias="board" type="muni.board.dto.BoardDto" />
 		<typeAlias alias="deli" type="muni.user.dto.UserDeliveryDto" />
@@ -30,6 +31,7 @@
 		</environment>
 	</environments>
 	<mappers>
+		<mapper resource="muni/order/sql/orderCart.xml" />
 		<mapper resource="muni/order/sql/userWish.xml" />
 		<mapper resource="muni/board/sql/review.xml" />
 		<mapper resource="muni/board/sql/notice.xml" />

@@ -54,9 +54,7 @@
 													<!-- 아이콘 박스 -->
 													<span class="wish"><img
 														src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_wish_before.png"
-														class="wish">WISH</span> <span class="cart"><img
-														src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/btn_list_cart.gif"
-														class="cart">CART</span>
+														class="wish">WISH</span> <span class="cart" piNum="${product.piNum}">CART</span>
 												</div>
 												<div class="dim">
 													<a href="/product/piView.do?piNum=${product.piNum}"></a>
@@ -126,5 +124,6 @@
 			</div>
 		</div>
 	</div>
+	<script src="/js/product/product.js"></script>
 </body>
 </html>

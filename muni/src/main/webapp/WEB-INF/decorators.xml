@@ -20,6 +20,7 @@
 		<pattern>/admin/user/*</pattern>
 	</decorator>
 	<excludes>
+		<pattern>/product/CartPickup.do</pattern>
 		<pattern>/order/orderForm.do</pattern>
 		<pattern>/view/admin/index.jsp</pattern>
 		<pattern>/order/orderForm.do</pattern>

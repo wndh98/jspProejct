@@ -20,7 +20,6 @@
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/admin.css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
 <deco:head></deco:head>
 </head>
 

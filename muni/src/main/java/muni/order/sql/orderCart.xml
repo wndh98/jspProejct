@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="orderCartns">
+	<resultMap id="orderCartResultMap" type="orderCart">
+		<id property="ocNum" column="OC_NUM" />
+		<result property="ocId" column="OC_ID" />
+		<result property="piNum" column="PI_NUM" />
+		<result property="ocCount" column="OC_COUNT" />
+		<result property="ocPrice" column="OC_PRICE" />
+
+	</resultMap>
+
+	<insert id="save" parameterType="orderCart">
+		insert into
+		ORDER_CART(OC_ID,PI_NUM,OC_COUNT,OC_PRICE) values(#{ocId},#{piNum},#{ocCount},#{ocPrice})
+	</insert>
+
+<select id="duplicateCheck" resultType="integer" parameterType="orderCart">
+select count(*) from ORDER_CART where OC_ID=#{ocId} and PI_NUM=#{piNum}
+</select>
+</mapper>

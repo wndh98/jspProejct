@@ -28,6 +28,10 @@
 		<filter-name>adminFilter</filter-name>
 		<filter-class>muni.filter.AdminFilter</filter-class>
 	</filter>
+	<filter>
+		<filter-name>cateFilter</filter-name>
+		<filter-class>muni.filter.CateFilter</filter-class>
+	</filter>
 	<filter-mapping>
 		<filter-name>sitemesh</filter-name>
 		<url-pattern>/*</url-pattern>
@@ -44,4 +48,13 @@
 		<url-pattern>/admin/product/*</url-pattern>
 		<url-pattern>/admin/order/*</url-pattern>
 	</filter-mapping>
+	<filter-mapping>
+		<filter-name>cateFilter</filter-name>
+		<url-pattern>/main.do</url-pattern>
+		<url-pattern>/user/*</url-pattern>
+		<url-pattern>/product/*</url-pattern>
+		<url-pattern>/order/*</url-pattern>
+		<url-pattern>/board/*</url-pattern>
+	</filter-mapping>
+
 </web-app>

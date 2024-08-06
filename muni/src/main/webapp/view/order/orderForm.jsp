@@ -14,7 +14,6 @@
 </head>
 
 <body id="userStyle">
-
 	<div class="wrap">
 		<div id="container">
 			<header id="header">
@@ -47,7 +46,7 @@
 			</header>
 			<!-- 여기까지 헤더 -->
 
-			<form id="frm_order" action method="post" target="_self">
+			<form id="frm_order" action="/order/orderInsert.do" method="post">
 				<div id="conbox" class="typeHeader">
 					<div class="orderBox base-fold">
 						<h1 class="orderTitle">배송지</h1>
@@ -78,22 +77,25 @@
 									</colgroup>
 									<tbody>
 										<tr>
-											<th>받는사람 <img src="/images/order/bg_required.png" alt="req">
+											<th>받는사람 <img src="/images/order/bg_required.png"
+												alt="req">
 											</th>
 											<td><input type="text" value="김주오" style="width: 100%">
 											</td>
 										</tr>
 										<tr>
-											<th>주소 <img src="/images/order/bg_required.png" alt="req">
+											<th>주소 <img src="/images/order/bg_required.png"
+												alt="req">
 											</th>
 											<td><input type="text" placeholder="우편번호">
-											<button class="btnNormal_w" style="display: inline-block;">주소검색</button>
+												<button class="btnNormal_w" style="display: inline-block;">주소검색</button>
 												<input type="text" placeholder="기본주소" style="width: 100%">
 												<input type="text" placeholder="나머지 주소(선택 입력 가능)"
 												style="width: 100%"></td>
 										</tr>
 										<tr>
-											<th>휴대 전화 <img src="/images/order/bg_required.png" alt="req">
+											<th>휴대 전화 <img src="/images/order/bg_required.png"
+												alt="req">
 											</th>
 											<td><select name="" id="" style="width: 32.19%">
 													<option>010</option>
@@ -102,7 +104,8 @@
 											</td>
 										</tr>
 										<tr>
-											<th>이메일 <img src="/images/order/bg_required.png" alt="req">
+											<th>이메일 <img src="/images/order/bg_required.png"
+												alt="req">
 											</th>
 											<td><input type="text" style="width: 50%"> @ <select
 												name="" id="" style="width: 46.6%">
@@ -121,21 +124,24 @@
 									</colgroup>
 									<tbody>
 										<tr>
-											<th>받는사람 <img src="/images/order/bg_required.png" alt="req">
+											<th>받는사람 <img src="/images/order/bg_required.png"
+												alt="req">
 											</th>
 											<td><input type="text" style="width: 100%"></td>
 										</tr>
 										<tr>
-											<th>주소 <img src="/images/order/bg_required.png" alt="req">
+											<th>주소 <img src="/images/order/bg_required.png"
+												alt="req">
 											</th>
 											<td><input type="text" placeholder="우편번호">
-											<button class="btnNormal_w" style="display: inline-block;">주소검색</button>
+												<button class="btnNormal_w" style="display: inline-block;">주소검색</button>
 												<input type="text" placeholder="기본주소" style="width: 100%">
 												<input type="text" placeholder="나머지 주소(선택 입력 가능)"
 												style="width: 100%"></td>
 										</tr>
 										<tr>
-											<th>휴대 전화 <img src="/images/order/bg_required.png" alt="req">
+											<th>휴대 전화 <img src="/images/order/bg_required.png"
+												alt="req">
 											</th>
 											<td><select name="" id="" style="width: 32.19%">
 													<option>010</option>
@@ -143,7 +149,8 @@
 												type="text" style="width: 32%"></td>
 										</tr>
 										<tr>
-											<th>이메일 <img src="/images/order/bg_required.png" alt="req">
+											<th>이메일 <img src="/images/order/bg_required.png"
+												alt="req">
 											</th>
 											<td><input type="text" style="width: 50%"> @ <select
 												name="" id="" style="width: 46.6%">
@@ -330,14 +337,14 @@
 								금액에 대해 무이자할부가 적용되지 않습니다. 무이자할부를 원하시는 경우 장바구니에서 무이자할부 상품만 선택하여
 								주문하여 주시기 바랍니다.</li>
 							<li>최소 결제 가능 금액은 결제금액에서 배송비를 제외한 금액입니다.</li>
-							</li>
+
 						</ul>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
-<script src="/js/order/order.js"></script>
+	<script src="/js/order/order.js"></script>
 </body>
 
 </html>

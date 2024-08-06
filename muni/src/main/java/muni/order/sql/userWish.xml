@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userWishns">
+	<resultMap id="userWishResultMap" type="userWish">
+		<id property="uwNum" column="UW_NUM" />
+		<result property="userId" column="USER_ID" />
+		<result property="piNum" column="PI_NUM" />
+	</resultMap>
+	
+	<insert id="insertWish" parameterType="userWish">
+		insert into
+		USER_WISH(USER_ID,PI_NUM) values(#{userId},#{piNum})
+	</insert>
+	<select id="selectWish" parameterType="userWish" resultMap="userWishResultMap">
+		select * from USER_WISH where USER_ID=#{userId} and PI_NUM=#{piNum}
+	</select>
+	<select id="selectWishList" parameterType="string" resultMap="userWishResultMap">
+		select * from USER_WISH where USER_ID=#{userId}
+	</select>
+</mapper>

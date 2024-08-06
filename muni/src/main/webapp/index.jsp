@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
+</head>	
 <body>
 <script>
 	location.href="/main.do";

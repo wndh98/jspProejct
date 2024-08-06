@@ -783,6 +783,7 @@ i.icoClose {
 
 #header .inner .top_nav_box .top_category>ul>li {
     padding: 0 40px;
+    position: relative;
 }
 
 #header .inner .top_nav_box div.checkbox .menuBox_on .menuBox_bottom div.title>button {
